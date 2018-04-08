@@ -1,0 +1,264 @@
+/*----------------------------------------------RESET CSS----------------------------------------------*/
+/* 娓呴櫎鍐呭杈硅窛 */
+*{ font-family:"微软雅黑"; font-size:12px;}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 缁撴瀯鍏冪礌 */
+dl, dt, dd, ul, ol, li, /* list elements 鍒楄〃鍏冪礌 */
+pre, /* text formatting elements 鏂囨湰鏍煎紡鍏冪礌 */
+fieldset, legend, button, input, textarea,form, /* form elements 琛ㄥ崟鍏冪礌 */
+th, td { /* table elements 琛ㄦ牸鍏冪礌 */
+    margin: 0;
+    padding: 0;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+
+i{ font-style:normal}
+address, cite, dfn, em, var { font-style: normal; } /* 灏嗘枩浣撴壎姝�*/
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 缁熶竴绛夊瀛椾綋 */
+
+/* 閲嶇疆鍒楄〃鍏冪礌 */
+ol, ul, li { list-style: none; }
+
+/* 閲嶇疆鏂囨湰鏍煎紡鍏冪礌 */
+
+abbr[title], acronym[title] { /* 娉細1.ie6 涓嶆敮鎸�abbr; 2.杩欓噷鐢ㄤ簡灞炴�閫夋嫨绗︼紝ie6 涓嬫棤鏁堟灉 */
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+q:before, q:after { content: ''; }
+
+/* 閲嶇疆琛ㄥ崟鍏冪礌 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 鎼溅锛氳閾炬帴閲岀殑 img 鏃犺竟妗�*/
+/* 娉細optgroup 鏃犳硶鎵舵 */
+button, input, select, textarea {
+    font-size: 100%; /* 浣垮緱琛ㄥ崟鍏冪礌鍦�ie 涓嬭兘缁ф壙瀛椾綋澶у皬 */
+    outline: none;
+}
+
+/* 閲嶇疆琛ㄦ牸鍏冪礌 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 閲嶇疆 hr */
+hr {
+    border: none;
+    height: 1px;
+}
+
+/* 璁╅潪ie娴忚鍣ㄩ粯璁や篃鏄剧ず鍨傜洿婊氬姩鏉★紝闃叉鍥犳粴鍔ㄦ潯寮曡捣鐨勯棯鐑�*/
+html { overflow-y: scroll; }
+
+label,
+select,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] { cursor: pointer;  }
+
+img{border: 0;}
+a{text-decoration: none; color:#666666;}
+a:hover{text-decoration: none; color:#552c0c;}
+
+
+
+body{background:#fff;}
+.clear{ clear:both;}
+
+
+.header{ width:100%; height:73px; background:url(../img/zhongxican/zxtopbg.gif) repeat-x;}
+.header .header01{ width:1000px; height:73px; margin:0 auto;}
+.header .header01 p{ float:right; padding:5px 10px 0px 0px; letter-spacing:2px; color:#666;}
+
+.nav{ width:100%; height:47px; background:url(../img/zhongxican/navbg.jpg) repeat-x;}
+.nav .nav01{ width:1000px; height:47px; margin:0 auto;}
+.nav .nav01 ul li{ float:left; padding:0px 13.5px; background:url(../img/zhongxican/tip.jpg) no-repeat right;}
+.nav .nav01 ul li a{ color:#f0c252; line-height:47px; font-size:14px;}
+.nav .nav01 ul li a:hover{ color:#fff;}
+
+.bannertwo{background:#e7e7e7; width:100%; height:220px;}
+.bannertwo .banner02{ width:1000px; height:220px; margin:0 auto;}
+
+
+
+img {border: none;vertical-align: middle;}
+img { -ms-interpolation-mode: bicubic; }
+/* common
+-----------------------------------------------*/
+/*__ maincontent _*/
+#maincontent {height:408px;overflow:hidden;position:relative; background:url(../img/zhongxican/bannerbg.jpg) repeat-x bottom;}
+#maincontent div.pict {cursor: default !important;}
+#maincontent div.main {position: static;text-align: center;display: block;cursor: pointer !important}
+#maincontent .element {display: none;position: absolute !important;}
+#maincontent .left {top :175px;left: 0;cursor: pointer;}
+#maincontent .right {top: 175px;right: 0;cursor: pointer;}
+#maincontent .main .guardian {display: none;height: 0;}
+#maincontent .navi {z-index: 9999999;}
+div#maincontent div.main{display:none;}div#maincontent div.element{position:absolute !important;}
+
+
+.concent{ width:100%;padding-top:20px;background:url(../img/zhongxican/tip3.jpg) repeat-x;margin-bottom: 10px;}
+.concent .concent01{ width:1000px; margin:0 auto;}
+.concent .concent01 .top{ height:158px; border-bottom:1px solid #bfb0a6; margin:0 auto; }
+.concent .concent01 .top ul{ width:430px; background:url(../img/zhongxican/flower.jpg) no-repeat; padding:10px 0px 0px 60px; height:158px; float: left;}
+.concent .concent01 .top ul li{ float:left; width:210px;height: 126px;overflow: hidden;}
+.concent .concent01 .top ul li h2{ padding-left:10px; line-height:30px; color:#552c0c; font-size:14px;}
+.concent .concent01 .top ul li p{ padding-left:10px; line-height:25px;}
+.concent .concent01 .top .people{ width:430px; background:url(../img/zhongxican/flower1.jpg) no-repeat 450px 0px; padding:10px 70px 0px 10px; height:158px; float: left;}
+
+.picture_t{line-height: 30px;
+    color: #552c0c;
+    font-size: 14px;}
+.picture_t a.picture_m{float: right;display: inline;width: auto;height: auto;margin-right: 0px;font-weight: normal;}
+.picture_t a.picture_m:hover{text-decoration: underline;}
+.picture #demo {overflow:hidden;height:180px;width:1000px;border-bottom:1px solid #bfb0a6; margin-top:5px;}
+.picture #indemo {float: left;width: 800%;}
+.picture #demo1 {float: left;}
+.picture a{ width:180px; height:220px; display:block; float:left;margin-right: 15px;}
+.picture a h4{line-height:30px; text-align:center;}
+.picture img{border: 1px solid #ddd;}
+.picture #demo2 {float: left;}
+
+.concent .concent01 .bottom{ width:1000px; height:170px; margin-top:20px;}
+/********************
+.concent .concent01 .bottom ul{ width:240px; height:230px; float:left; border:1px solid #eae5e1; margin-right:10px;}
+.concent .concent01 .bottom ul h2{ height:37px; background:url(../img/zhongxican/h2bg.jpg) repeat-x; margin-bottom:10px;}
+.concent .concent01 .bottom ul h2 span{ width:109px; height:37px; background:url(../img/zhongxican/titlebg.jpg) no-repeat; display:inline-block; text-align:center; line-height:37px; font-size:14px; color:#552c0c;}
+.concent .concent01 .bottom ul h2 a{ line-height:37px; float:right; font-weight:500; padding-right:5px;*margin-top:-35px;}
+.concent .concent01 .bottom ul dl{ padding:0px 10px; height:60px;}
+.concent .concent01 .bottom ul dl dt{ float:left; line-height:25px;}
+.concent .concent01 .bottom ul li{ line-height:25px; background:url(../img/zhongxican/tip4.jpg) no-repeat 10px 10px; padding-left:20px;}
+.concent .concent01 .bottom ul dl img{ width:62px; height:46px;}
+*********/
+
+.course{float: left;width: 493px;height: 164px;background: #fff;border: 1px solid #bfb0a6;}
+.course_t{background: #552c0c;height: 39px;}
+.course_t span{float: left; display: block;width: 132px;height: 39px;text-align: center;line-height: 39px;color: #f0c252;background:url(../img/zhongxican/xctbg.png) no-repeat;font-size: 14px;}
+.course_t a{float: right;margin-right:10px;margin-top:6px;display:block;width:59px;height:22px;line-height:22px;text-align:center; color:#f0c252;border:1px solid #f0c252; -moz-border-radius: 4px;
+ -webkit-border-radius:10px;
+-khtml-border-radius: 10px;
+border-radius: 10px;
+-webkit-border-radius: 10px;
+-khtml-border-radius: 10px;}
+.courselist{}
+.courselist li{float: left;margin-left: 13px;margin-top: 18px;}
+.courselist li a img{border: 1px solid #d1d1d1;float: left;}
+.courselist_main{float: left;margin-left: 10px;width: 91px;}
+.courselist_main p{font-size: 14px;color: #333;line-height:22px;height:58px;}
+.courselist_main a{display: block;width: 91px;height: 28px;color: #fff;line-height: 28px;text-align: center;background: #bf6a28;m}
+
+.jxbox{background: #f7f7f7;height: 245px;margin-top:20px;}
+.jx{width: 1000px;margin: 0 auto;}
+.jxsbox{float:left;width: 490px;height: 230px;}
+.jxsbox_t{height: 41px;}
+.jxsbox_t span{float: left;display: block;background:url(../img/zhongxican/xcjxbg.png) no-repeat;width: 108px;height: 41px;text-align: center;font-size: 14px;color: #f0c252;line-height: 35px;}
+.jxsbox_t a{float: right;color: #552c0c;margin-top: 15px;}
+.jxsboxfirst{clear: both;margin-top:10px;height: 115px;}
+.jxsboxfirst a img{float: left;background: #fff;border: 1px solid #cdcdcd;padding: 3px;}
+.jxsboxfirst_main{float: left;margin-left: 10px;width: 302px;}
+.jxsboxfirst_main h2 a{font-size: 14px;color: #333;}
+.jxsboxfirst_main p{line-height: 22px;color: #666;}
+
+.jxsboxlist{clear: both;margin-top: 15px;}
+.jxsboxlist li{background:url(../img/zhongxican/jxico.png) no-repeat;background-position: left center;padding-left:20px;width: 210px;float: left;height:30px; line-height: 30px;}
+.jxsboxlist li a{color: #666;font-size: 14px;}
+.jxsboxlist li a:hover,.jxsbox_t a:hover,.courselist_main a:hover,.course_t a:hover,.jxsboxfirst_main h2 a:hover{text-decoration: underline;}
+
+
+.footer{ width:100%; height:90px; background:#552c0c; border-top:5px solid #f0c252;margin-top:20px;}
+.footer .footer01{ width:1000px; height:68px; margin:0 auto; padding-top:10px;}
+.footer .footer01 p{ width:1000px; text-align:center; line-height:25px; color:#97702c;} 
+.footer .footer01 p a{color:#97702c;}
+.tukuzlm{ text-align:center; margin-top:10px;}
+
+
+
+
+.concent .concent01{ width:1000px; margin:0 auto;}
+.concent .concent01 .left01{ width:210px; float:left; margin-right:20px; background:#fff; padding:10px;}
+.concent .concent01 .left01 h2{ height:60px; width:200px; display:block;font-size:24px; color:#552c0c; text-align:center; background:url(../img/zhongxican/titlebg.jpg) repeat-x; line-height:60px;}
+.concent .concent01 .left01 li a{  display:block; height:30px;line-height:30px;background:#f8f8f8; border:1px solid #dedede;width:200px;}
+.concent .concent01 .left01 li a.check{background:url(../img/zhongxican/titlebg.jpg) repeat-x; color:#552c0c; font-weight:bold;}
+.concent .concent01 .left01 li a:hover{background:url(../img/zhongxican/titlebg.jpg) repeat-x; color:#552c0c; font-weight:bold;}
+.concent .concent01 .left01 li{ text-align:center; height:40px; margin-bottom:5px;}
+.concent .concent01 .left01 h3{ line-height:30px; border-bottom:1px solid #a48c64; background:url(../img/zhongxican/tip5.jpg) no-repeat 10px 10px; padding-left:20px; font-size:14px; color:#854f00; margin-bottom:10px;}
+.concent .concent01 .right01{ width:730px; float:left; background:#fff; padding:10px;}
+.concent .concent01 .right01 h3{width:730px; line-height:30px; border-bottom:1px solid #965621;display:block; height:30px; font-weight:500; margin-bottom:10px;}
+.concent .concent01 .right01 h3 p{ float:right;}
+.concent .concent01 .right01 li{ line-height:40px; background:url(../img/zhongxican/tip4.jpg) no-repeat 15px 18px;border-bottom:1px dotted #dedede; padding-left:30px;}
+.concent .concent01 .right01 li span{ float:right;*margin-top:-40px;}
+.concent .concent01 .right01 li a:hover{ text-decoration:underline;}
+
+
+
+.concent .concent01 .right01 ul dl{ width:730px; height:115px; padding:10px; border-bottom:1px dashed #965621; margin-top:10px;}
+.concent .concent01 .right01 ul dl dt h4{ font-size:14px; line-height:30px;}
+.concent .concent01 .right01 ul dl dt h4 a:hover{color:#965621; text-decoration:underline;}
+.concent .concent01 .right01 ul dl dt p{ line-height:25px; text-indent:25px;}
+.pagesite{margin-top: 20px;}
+
+
+.word{ width:100%;
+  padding-top: 20px;
+  background: url(../img/zhongxican/tip3.jpg) repeat-x;}
+.word .word01{ overflow: hidden;width:970px; margin:0 auto;background:#fff;padding:15px;padding-bottom: 0;}
+.word .word01 ul{ background:#fff;}
+.word .word01 h4{ line-height:50px; text-align:center; font-size:14px; color:#552c0c;}
+.word .word01 h3{ text-align:center; font-weight:500; display:block; background:#F4F4F4; line-height:40px; }
+.word .word01 p{ padding:10px 20px; line-height:25px; margin-top:10px; text-indent:25px; }
+
+
+/**新加的 **/
+.zhezhao{position:fixed;top:0;bottom: 0;left: 0;right: 0;background: rgba(0,0,0,0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient( GradientType = 0,startColorstr = '#B2000000',endColorstr = '#B2000000');}
+.askinfo{position: fixed;top:20%;left:40%;z-index: 999;width: 500px; background: #fff;border: 10px solid #ddd;padding: 10px; }
+.askinfo_t{height: 35px;line-height: 35px;background: #eee;padding-left: 15px;font-size: 15px;color: #333;}
+.askinfotable{width:90%;margin: 15px auto;}
+.askinfotable tr td{font-size:14px; line-height:50px;font-size: 14px;}
+.askinput{background: #fff;border: 1px solid #ddd;height: 30px;line-height: 30px;padding-left: 5px;width:260px;}
+.asktextarea{background: #fff;border: 1px solid #ddd;width:260px;padding-left: 5px;margin-top: 8px;}
+.askbutton{background: #eee;border: 1px solid #ddd;height: 30px;line-height: 30px;text-align: center;width: 62px;margin-right: 30px;}
+.askbutton:hover{background: #ddd;}
+.closeask{position: absolute;right: -26px;top:-26px;font-size:20px;background: #fff;padding:5px 10px;color: #666;z-index: 9999;cursor: pointer;}
+.hdjlbox{ background:#fff; padding-bottom:10px;}
+.hdlist{ margin:0 10px; clear:both;}
+.hdlist li{ background:none!important; min-height:80px;border-bottom:none!important; overflow:hidden; padding-left:0px!important; margin-top:25px; margin-bottom:10px;}
+.question{ background:url(../img/reply.gif) no-repeat 10px 7px; font-size:14px; color:#333; min-height:30px;overflow:hidden; line-height:22px; padding-left:33px;}
+.answer{ background:#f5f5f5 url(../img/hdico1.jpg) no-repeat right bottom;min-height:30px; overflow:hidden; color:#666;line-height:22px;border-bottom: 1px dotted #dedede; padding-top:6px; padding-bottom:10px; padding-right:15px;
+ -moz-border-radius: 4px/*{cornerRadius}*/;
+ -webkit-border-radius: 4px/*{cornerRadius}*/;
+-khtml-border-radius: 4px/*{cornerRadius}*/;
+border-radius: 4px/*{cornerRadius}*/;
+-webkit-border-radius: 4px/*{cornerRadius}*/;
+-khtml-border-radius: 4px/*{cornerRadius}*/;}
+.answer img{margin-top: -10px;margin-right: 6px;}
+.wytw{ height:30px; line-height:30px; float:right; margin:10px 10px 0 0}
+.wytw a{ color:#666; display:block; background:url(../img/jdtbg.gif) repeat-x; width:100px; height:30px; border:1px solid #ddd; text-align:center;}
+.wytw a:hover{ color:#333;border:1px solid #ccc;}
+
+.testtitle{height: 30px;line-height: 30px;margin-top:20px;}
+.testtitle a{font-size: 18px;color: #222;float: left;}
+.testtime{float:right; font-size: 14px;color: #888;}
+.testbuton{margin-top: 10px;height: 30px;}
+.testbuton a{display: block;float: left;margin-right: 10px;width: 169px;text-align: center;height: 30px;line-height: 30px;font-size: 14px;border: 1px solid #eee;padding: 2px;}
+.testbuton a span{display: block;background: #eee;color: #555;transition:All 0.4s ease-in-out;    -webkit-transition:All 0.4s ease-in-out;    -moz-transition:All 0.4s ease-in-out;    -o-transition:All 0.4s ease-in-out;}
+.testbuton a span:hover{background: #ddd;color: #333;font-size: 15px;letter-spacing:5px;}
+
+.testcont{margin-top: 20px;clear: both;}
+.testcont p{font-size: 14px;color: #333;line-height:35px;}
+.testcont p input{margin: 0 5px;border: 1px solid #ddd;width: 150px;height: 25px;line-height: 25px;}
+
+
+
+
+
+
+
+

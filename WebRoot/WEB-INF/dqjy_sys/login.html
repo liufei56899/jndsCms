@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>陕西职业院校技能大赛管理平台</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=8,IE=9,IE=10"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="${base}/res/jeecms/css/reset.css">
+    <link rel="stylesheet" href="${base}/res/jeecms/css/login-style.css">
+    <script src="${base}/r/cms/www/red/js/jquery-2.1.0.min.js"></script>
+</head>
+<body>
+<!-- <div class="head">
+    <div class="bg"></div>
+    <div class="inner">
+        <h1>
+            <img src="${base}/res/jeecms/img/login-logo.png" alt="">
+        </h1>
+        <a href="/" target="_blank" class="text">返回首页</a>
+    </div>
+</div> -->
+<!--head end-->
+<!--main bg-->
+<div class="main">
+    <div class="main-inner">
+        <h2 class="main-title">陕西职业院校技能大赛管理平台</h2>
+        <div class="tab">
+            <div class="tab-left">
+                <img src="${base}/res/jeecms/img/logininfo.png" alt="">
+            </div>
+            <div class="tab-right">
+                <div class="form">
+                    <form  id="jvForm" action="login.do" method="post">
+                        <div class="user">
+                            <input type="text" id="username" placeholder="请输入账号" name="username" vld="{required:true}" maxlength="100" class="name"/>
+                        </div>
+                        <div class="pass">
+                            <input name="password" placeholder="请输入密码" type="password" id="password" maxlength="32" vld="{required:true}" class="name"/>
+                        </div>
+                        <div class="yzm">
+                            <input name="captcha" type="text" id="captcha" value="" />
+                        </div>
+                        <div class="code-img">
+                            <img src="${base}/captcha.svl" onclick="this.src='${base}/captcha.svl?d='+new Date()*1" />
+             				<p id="captcha_">&nbsp;</p>
+                        </div>
+                        <input class="sub" type="button" onclick="checkCaptcha();" value="登录">
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--foot bg-->
+<div class="foot">
+    <div class="foot-cont">
+        <p>技术支持：陕西大秦教育科技有限公司</p>
+        <p></p>
+    </div>
+</div>
+<#include "/common/alert_message.html"/>
+<script>
+//验证码验证
+function checkCaptcha(){
+	var username = $("#username").val();
+	var password = $("#password").val();
+	var captcha=$("#captcha").val();
+	if(username=="" || username == null)
+	{
+		alert("请输入账号");
+		return false;
+	}
+	if(password=="" || password == null)
+	{
+		alert("请输入密码");
+		return false;
+	}
+	if(captcha==""){
+		//$("#captcha_").html("该项为必填项"); 
+		alert("请输入验证码");
+		return false;
+	}
+	else
+	{
+		$("#jvForm").submit();
+	}
+	
+}
+</script>
+</body>
+</html>

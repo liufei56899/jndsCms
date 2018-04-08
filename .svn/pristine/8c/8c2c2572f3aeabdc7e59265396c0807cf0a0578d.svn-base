@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" 	href="style.css" />
+<link type="text/css"  rel="stylesheet"  href="base.css"/>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.kinMaxShow-1.1.src.js"></script>
+<script type="text/javascript">
+		$(document).ready(function(){
+			$(".menulist li:has(ul)").hover(
+				 function() {
+					$(this).children("a").css({color:"#f2dcb8"});
+					if($(this).find("li").length > 0){
+						$(this).children("ul").stop(true, true).slideDown(100);
+					}
+				 },
+				 function() {
+					 $(this).children("a").css({color:"#f2dcb8"});
+					 $(this).children("ul").stop(true, true).slideUp("fast")
+				 }
+			);
+		});
+</script>
+
+
+<title>洛南县职业技术教育中心</title>
+</head>
+
+<body>
+<div class="top">
+<div class="logo"><img src="images/logo.png" width="370" height="73" /> </div>
+<div class="top_r"><a href="#">加入收藏</a> | <a href="#">联系我们</a></div>
+</div>
+
+<div class="menu">
+<ul class="menulist">
+ <li><a href="index.html">专业首页</a></li>
+ <li><a href="list.html">人才培养</a>
+<ul>
+<li><a href="textlist.html">调研</a></li>
+<li><a href="textlist.html">人才培养方案</a></li>
+<li><a href="textlist.html">行业标准</a></li>
+<li><a href="textlist.html">课程标准</a></li>
+</ul>
+</li>
+<li><a href="#">课程改革</a></li>
+<li><a href="#">教学资源库</a>
+<ul>
+<li><a href="list.html">教学课件</a></li>
+<li><a href="list.html">教学资源</a></li>
+</ul>
+</li>
+<li><a href="#">师资建设</a>
+<ul>
+<li><a href="list.html">师资队伍</a></li>
+<li><a href="list.html">教学风采</a></li>
+<li><a href="list.html">师资配备</a></li>
+</ul>
+</li>
+<li><a href="#">实训基地</a>
+<ul>
+<li><a href="list.html">校内实训基地</a></li>
+<li><a href="list.html">校外实训基地</a></li>
+</ul>
+</li>
+<li><a href="#">校企合作 </a>
+<ul>
+<li><a href="list.html">企业介绍</a></li>
+<li><a href="list.html">协议书</a></li>
+<li><a href="list.html">研讨会资料</a></li>
+<li><a href="list.html">校企合作图片</a></li>
+</ul>
+</li>
+<li><a href="#">教学成果</a></li>
+<li><a href="#">示范与贡献</a>
+<ul>
+<li><a href="list.html">社会服务</a></li>
+<li><a href="list.html">技术服务</a></li>
+<li><a href="list.html">示范辐射</a></li>
+</ul>
+</li>
+<li><a href="#">核心课程</a>
+<ul>
+<li><a href="list.html">餐饮服务</a></li>
+<li><a href="list.html">茶艺精品</a></li>
+<li><a href="list.html">中西餐的零点摆台及接待服务</a></li>
+<li><a href="list.html">酒店英语</a></li>
+</ul>
+</li>
+<li><a href="#">互动交流 </a>
+<ul>
+<li><a href="list.html">互动交流</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<script type="text/javascript">
+$(function(){
+$("#kinMaxShow").kinMaxShow();
+});
+</script>
+<div id="kinMaxShow">
+<div>
+<a href="" target="_blank"><img src="images/pic.jpg" /></a>
+</div>
+<div>
+<a href="" target="_blank"><img src="images/pic1.jpg" /></a>
+</div>
+<div>
+<a href="" target="_blank"><img src="images/pic2.jpg" /></a>
+</div>
+</div>
+<div class="container">
+ <div class="concent">
+         <div class="left">
+              <h2>互动交流</h2>
+            <ul>
+            
+<li><a href="list.html">互动交流</a></li>
+           </ul>
+           <h3>友情链接</h3>
+           <li><a href="#">陕西省职业技术学校</a></li>
+           <li><a href="#">陕西省职成教育网</a></li>
+          <p class="sxjdimg"><a href="#"> <img src="images/img8.jpg" width="200" height="162"/>
+          <span class="sxjd">实训基地</span>
+          </a></p>
+         </div>
+         <div class="right">
+            <ul>
+            <h3><p>您当前位置是：<a href="#">首页</a>—><a href="#">互动交流</a></p></h3>
+          <div class="hdjlbox">
+          <p class="wytw"><a href="#">我要提问</a></p>
+          <ul class="hdlist">
+          <li>
+          <p class="question">该专业的就业前景如何？该专业的就业前景如何？</p>
+          <div class="answer">
+          酒店专业的前景非常好，学校根据各大酒店的需要订单培养。
+          </div>
+          </li>
+           <li>
+          <p class="question">该专业的就业前景如何？该专业的就业前景如何？该专业的就业前景如何？</p>
+          <div class="answer">
+          酒店专业的前景非常好，学校根据各大酒店的需要订单培养。
+           酒店专业的前景非常好，学校根据各大酒店的需要订单培养。
+           
+          </div>
+          </li>
+           <li>
+          <p class="question">该专业的就业前景如何？该专业的就业前景如何？该专业的就业前景如何？该专业的就业前景如何？</p>
+          <div class="answer">
+          酒店专业的前景非常好，学校根据各大酒店的需要订单培养。
+           酒店专业的前景非常好，学校根据各大酒店的需要订单培养。
+            酒店专业的前景非常好，学校根据各大酒店的需要订单培养。
+          </div>
+          </li>
+           <li>
+          <p class="question">该专业的就业前景如何？该专业的就业前景如何？该专业的就业前景如何？该专业的就业前景如何？该专业的就业前景如何？</p>
+          <div class="answer">
+          酒店专业的前景非常好，学校根据各大酒店的需要订单培养。
+           酒店专业的前景非常好，学校根据各大酒店的需要订单培养。
+            酒店专业的前景非常好，学校根据各大酒店的需要订单培养。
+             酒店专业的前景非常好，学校根据各大酒店的需要订单培养。
+              酒店专业的前景非常好，学校根据各大酒店的需要订单培养。
+          </div>
+          </li>
+          </ul>
+          
+           <div class="page">
+                <div class="pagesite"><div>
+                  共0条记录 1/1页
+                &nbsp;<a disabled="disabled">首页</a> <a disabled="disabled">上一页</a>&nbsp;<a disabled="disabled">下一页</a> <a disabled="disabled">尾页</a>
+                &nbsp;第<select onchange="if(this.value==1){location='index.htm?cnn=0'}else{location='index_'+this.value+'.htm?cnn=0'}this.disabled='disabled'">
+                <option value="1" selected="selected">1</option>
+                 </select><lect>页
+             </div> </div>
+            </div>
+            </div>
+          </ul>
+         </div>
+        
+      </div>
+
+<div class="clear"></div>
+</div>
+
+<div class="foot">
+<div class="link">友情链接：<a href="#">陕西省职业技术学校</a>   <a href="#">陕西省职成教育网</a></div> 
+<p>学校地址：陕西省洛南县　邮编：726100　电话：0914—7380851    电子邮箱：lnzjzxbgs@163.com</p>
+<p>版权所有：Copyright 2013-2015  洛南职业教育中心  陕ICP06002951号</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<div class="header">
+    <div class="top">
+        <div class="time pull-left timer">今天是
+            <label id="show">显示时间的位置</label>
+        </div>
+        <div class="t-r-fr pull-right">
+            <a href="javascript:void(0);" onclick="SetHome(window.location)">设为首页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:void(0);" onclick="AddFavorite(window.location)">加入收藏</a>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" language="javascript">
+   //加入收藏
+       function AddFavorite(sURL, sTitle) {
+           sURL =encodeURI(sURL); 
+       try{   
+          window.external.addFavorite(sURL, sTitle);   
+       }catch(e) {   
+          try{   
+              window.sidebar.addPanel(sTitle, sURL, "");   
+           }catch (e){   
+              alert("您的浏览器不支持自动加入收藏功能，请使用Ctrl+D进行添加，或手动在浏览器里进行设置！");
+          }   
+       }
+   }
+   //设为首页
+   function SetHome(url){
+       if (document.all) {
+          document.body.style.behavior='url(#default#homepage)';
+             document.body.setHomePage(url);
+       }else{
+           alert("您的浏览器不支持自动设置页面为首页功能，请您手动在浏览器里设置该页面为首页！");
+       }
+   }
+   
+    function Doble(num){
+            if(num<10){
+                return '0' +num;
+            }
+            else{
+                return '' + num;
+            }
+        }
+        function To(){
+            var pid =document.getElementById('show');
+            var Time=new Date;
+            var str = Time.getFullYear() +'年'+ Doble(Time.getMonth()+1)+'月' + Doble(Time.getDate())+'日'+ Doble(Time.getHours())+'时' +Doble(Time.getMinutes())+'分' +Doble(Time.getSeconds())+'秒';
+
+            pid.innerHTML=str;
+        }
+        setInterval(To,1000);
+        To();
+   
+    /*  var time = (new Date()).getTime();
+      function showTime() {
+      	console.log("5555555");
+          var now = new Date();
+          var year = now.getFullYear();
+          var month = now.getMonth() + 1;
+          var day = now.getDate();
+          var hours = now.getHours();
+          var minutes = now.getMinutes();
+          var seconds = now.getSeconds();
+
+          function text(add) {
+              var add = add + "";
+              return add = add.length > 1 ? add : 0 + add;
+          };
+          document.all.show.innerHTML = "" + year + "年" + month + "月" + day + "日 " + text(hours) + "时" + "" + text(minutes) + "分" + "" + text(seconds) + "" + "秒";
+          var timeID = setTimeout(showTime, 1000);
+        } */
+</script>

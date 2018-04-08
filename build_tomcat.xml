@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<project name="jpkc" default="">
+    <property name="dest.dir" value="E:\apache-tomcat-7.0.54-jpkc\webapps\ROOT" />
+	<property name="dest.classes" value="${dest.dir}/WEB-INF/classes" />
+	<!--系统源文件-->
+    <property name="src.dir" value="F:\Workspaces\MyEclipse 12\jpkc" />
+	
+    <target name="init">
+        <mkdir dir="${dest.dir}" />
+    	<mkdir dir="${dest.classes}" />
+    </target>
+	
+	<!--编译class-->
+    <target name="compile" depends="init">
+    	<copy todir="${dest.dir}/WEB-INF/classes" preservelastmodified="true" verbose="true">
+    		<fileset dir="${src.dir}/src">
+				<include name="**/*.hbm.xml" />
+    			<include name="**/*.properties" />
+    			<include name="**/*.dic" />
+    		</fileset>
+    	</copy>
+        <javac srcdir="${src.dir}/src" destdir="${dest.classes}" includeantruntime="on" debug="true" encoding="UTF-8" listfiles="true">
+            <classpath>
+                <fileset dir="${src.dir}\\WebRoot\\WEB-INF\\lib">
+                    <include name="*.jar" />
+                </fileset>
+            </classpath>
+        </javac>
+    	<echo>编译成功...................</echo>
+    </target>
+	
+	<!--部署jsp到tomcat-->
+	<target name="copy_jsp_to_tomcat" >
+		<copy todir="${dest.dir}" preservelastmodified="true" verbose="true">
+			<fileset dir="${src.dir}/WebRoot">
+				<exclude name="WEB-INF/lucene/**"/>
+				<exclude name="WEB-INF/classes/com/**"/>
+				<exclude name="**/_svn/**"/>
+				<exclude name="**/.svn/**"/>
+				<include name="**/**" />
+			</fileset>
+		</copy>
+	</target>
+	
+</project>

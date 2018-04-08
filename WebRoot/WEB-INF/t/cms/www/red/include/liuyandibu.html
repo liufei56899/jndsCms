@@ -1,0 +1,18 @@
+    <div class="askinfo" id="askbox" style="display: none;">
+ <p onclick="closeask();" class="closeask">X</p>
+<form  method="post" id="messForm" style="position: relative;">
+ <p class="askinfo_t">我要提问</p>
+<input type="hidden" value=${channel.id} name="type" id="type"/>
+ <table class="askinfotable">
+ <tr><td align="right"><label>姓名：</label></td><td><input  type="text" class="askinput" name="sendname" id="sendname" /><b style="color: red;">*</b></td></tr>
+ <tr><td align="right"><label>性别：</label></td><td><input  type="radio" name="sex" id="sex" value="0"/> 男 &nbsp;&nbsp;&nbsp;<input  type="radio" name="sex" id="sex" value="1"/> 女</td></tr>
+ <tr><td align="right"><label>职业：</label></td><td><input  type="text" class="askinput" name="profession" id="profession" /></td></tr>
+ <tr><td align="right"><label>联系电话：</label></td><td><input  type="text" class="askinput" name="phone" id="phone" /></td></tr>
+ <tr><td align="right"><label>联系邮箱：</label></td><td><input  type="text" class="askinput" name="email" id="email" /><b style="color: red;">*</b></td></tr>
+ <tr><td align="right">问题描述：</td><td><textarea rows="10" cols="50"  class="asktextarea" name="question" id="question" ></textarea><b style="color: red;">*</b></td></tr>
+ <tr><td></td><td><button type="button" class="askbutton" name="put" id="put" >提交</button>
+<button type="reset" class="askbutton"   >重置</button></td></tr>
+</table>
+     </form>
+</div>     
+<div class="zhezhao" style="display: none;" ></div>   

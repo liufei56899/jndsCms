@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.concent{ width:100%; }
+.concent .concent01{ width:980px;margin:0 auto;background:#f5f1e9; padding:10px;}
+.concent .concent01 .concent0101{ height:260px; margin-bottom:10px;}
+.concent .concent01 .concent0101 ul{width:465px; float:left; height:240px; padding:10px;background: #fff;}
+.concent .concent01 .concent0101 ul.kcinfo{ background:#fff url(../img/titlebg01.png) no-repeat 10px 80px; }
+.concent .concent01 .concent0101 ul h2{ line-height:30px; border-bottom:1px solid #a48c64; background:url(../img/tip.jpg) no-repeat 10px; padding-left:30px; font-size:14px; color:#854f00;}
+.concent .concent01 .concent0101 ul h2 a{ float:right; font-weight:500; color:#a48c64;*position: relative;*margin-top: -30px;}
+.concent .concent01 .concent0101 ul.kcinfo p{background:none!important; padding:10px 10px 0px 185px;line-height:25px; color:#a48c64; text-indent:25px;}
+.concent .concent01 .concent0101 ul.kcinfo p a{text-decoration: underline;}
+.concent .concent01 .concent0101 ul li{ background:url(../img/titlebg02.jpg) no-repeat 270px 10px; height:220px; padding:10px;}
+.concent .concent01 .concent0101 ul li h3{ font-weight:500; line-height:30px; color:#a48c64;}
+.concent .concent01 .concent0101 ul.kctsinfo{ background:#fff url(../img/titlebg02.jpg) no-repeat 305px 50px; }
+.concent .concent01 .concent0101 ul.kctsinfo p{background:none!important; padding:10px 185px 0px 10px;line-height:25px; color:#a48c64; text-indent:25px;}
+.concent .concent01 .concent0101 ul.kctsinfo p a{text-decoration: underline;}
+.concent .concent01 .concent0102{ height:240px; margin-bottom:10px;}
+.concent .concent01 .concent0102 ul{ width:465px; float:left; height:220px; background:#fff; padding:10px;}
+.concent .concent01 .concent0102 ul h2{ line-height:30px; border-bottom:1px solid #a48c64; background:url(../img/tip.jpg) no-repeat 10px; padding-left:30px; font-size:14px; color:#854f00; margin-bottom:6px;}
+.concent .concent01 .concent0102 ul h2 a{ float:right; font-weight:500; color:#a48c64;*position: relative;*margin-top: -30px;}
+.concent .concent01 .concent0102 ul li{background:#e6ddc9 url(../img/cyico.gif) no-repeat 10px center;padding-left:20px; width: 115px;float: left;margin-left: 14px;margin-top:10px;height: 30px;
+border: 1px solid #dac89f;line-height: 30px;}
+.concent .concent01 .concent0102 ul li a span{ float:right;}
+.concent .concent01 .concent0102 ul li a:hover{ text-decoration:underline; color:#321d16;}
+.concent .concent01 .concent0102 ul dl{ height:220px; padding:10px; float:left;}
+.concent .concent01 .concent0102 ul dl dt{ font-weight:500; line-height:30px; color:#a48c64;}
+
+
+.concent .concent01 .concent0103{ height:200px; margin-bottom:10px; background:#fff; padding:10px;}
+.concent .concent01 .concent0103 h2{ line-height:30px; border-bottom:1px solid #a48c64; background:url(../img/tip.jpg) no-repeat 10px; padding-left:30px; font-size:14px; color:#854f00; margin-bottom:10px;}
+.concent .concent01 .concent0103 h2 a{ float:right; font-weight:500; color:#a48c64;*position: relative;*margin-top: -30px;}
+
+.picture #demo {overflow:hidden;height:220px;width:950px;}
+.picture #indemo {float: left;width: 800%;}
+.picture #demo1 {float: left;}
+.picture a{ width:180px; height:170px; display:block; float:left;margin-right: 15px;}
+.picture a h4{ line-height:30px; text-align:center;}
+.picture img{border: 1px solid #ddd;}
+.picture #demo2 {float: left;}
+
+.concent .concent01 .concent0104{ margin-bottom:10px; background:#fff; padding:10px; }
+.concent .concent01 .concent0104 p{ line-height:20px; color:#a48b62;}
+.concent .concent01 .concent0104 p a{margin:0px 10px;}
+.concent .concent01 .concent0104 p a:hover{text-decoration:underline; color:#321d16;}
+
+/*课程设置*/
+.concent .concent02{ width:970px;margin:0 auto;background:#f5f1e9; padding:15px; }
+.concent .concent02 .left{ width:220px; float:left; margin-right:20px; background:#fff; padding:10px;}
+.concent .concent02 .left h2{ height:60px; width:200px; display:block; background:url(../img/tip02.jpg) no-repeat 150px 0px; font-size: 30px;margin-left: 10px; color:#8c4d19;}
+.concent .concent02 .left li a{ background:#c8bb9b; display:block; border-radius:10px; height:30px;line-height:30px;}
+.concent .concent02 .left li a:hover{ background:#723500; color:#fff;}
+.concent .concent02 .left li a.check{ background:#723500; color:#fff;}
+.concent .concent02 .left li{ border-bottom:1px dashed #8c4d19; text-align:center; height:40px; margin-bottom:5px;}
+.concent .concent02 .left h3{ line-height:30px; border-bottom:1px solid #a48c64; background:url(../img/tip.jpg) no-repeat 10px; padding-left:30px; font-size:14px; color:#854f00; margin-bottom:10px;}
+.concent .concent02 .right{ width:690px; float:left; background:#fff; padding:10px;}
+.concent .concent02 .right h3{width:690px; line-height:30px; border-bottom:1px solid #965621;display:block; height:30px; font-weight:500; margin-bottom:10px;}
+.concent .concent02 .right h3 p{ float:right;}
+.concent .concent02 .right li{ line-height:40px; background:url(../img/tip03.jpg) no-repeat 5px 10px;border-bottom:1px dashed #dedede; padding-left:30px;}
+.concent .concent02 .right li span{ float:right;*margin-top:-40px;}
+.concent .concent02 .right li a:hover{ text-decoration:underline; color:#321d16;}
+
+
+
+.concent .concent02 .right ul dl{ width:670px; height:105px; padding:10px; border-bottom:1px dashed #965621; margin-top:10px;}
+.concent .concent02 .right ul dl dt h4{ font-size:14px; line-height:30px;}
+.concent .concent02 .right ul dl dt h4 a:hover{color:#965621; text-decoration:underline;}
+.concent .concent02 .right ul dl dt p{ line-height:25px; text-indent:25px;}
+
+
+
+.word{ width:100%;}
+.word .word01{overflow: hidden; width:970px; margin:0 auto;background:#f5f1e9;padding:15px;}
+.word .word01 ul{ background:#fff;}
+.word .word01 h4{ line-height:50px; text-align:center; font-size:14px; color:#854f00;}
+.word .word01 h3{ text-align:center; font-weight:500; display:block;line-height:40px; }
+.word .word01 p{ padding:0px 20px; line-height:25px; margin-top:10px; text-indent:25px; margin-bottom:20px;}

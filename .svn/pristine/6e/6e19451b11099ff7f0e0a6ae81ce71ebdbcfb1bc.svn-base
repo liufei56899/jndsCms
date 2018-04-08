@@ -1,0 +1,29 @@
+/**ÐÂ¼ÓµÄ **/
+.zhezhao{position:fixed;top:0;bottom: 0;left: 0;right: 0;background: rgba(0,0,0,0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient( GradientType = 0,startColorstr = '#B2000000',endColorstr = '#B2000000');}
+.askinfo{position: fixed;top:20%;left:40%;z-index: 999;width: 500px; background: #fff;border: 10px solid #ddd;padding: 10px; }
+.askinfo_t{height: 35px;line-height: 35px;background: #eee;padding-left: 15px;font-size: 15px;color: #333;}
+.askinfotable{width:90%;margin: 15px auto;}
+.askinfotable tr td{font-size:14px; line-height:50px;font-size: 14px;}
+.askinput{background: #fff;border: 1px solid #ddd;height: 30px;line-height: 30px;padding-left: 5px;width:260px;}
+.asktextarea{background: #fff;border: 1px solid #ddd;width:260px;padding-left: 5px;margin-top: 8px;}
+.askbutton{background: #eee;border: 1px solid #ddd;height: 30px;line-height: 30px;text-align: center;width: 62px;margin-right: 30px;}
+.askbutton:hover{background: #ddd;}
+.closeask{position: absolute;right: -26px;top:-26px;font-size:20px;background: #fff;padding:5px 10px;color: #666;z-index: 9999;cursor: pointer;}
+.hdjlbox{ background:#fff; padding-bottom:10px;}
+.hdlist{ margin:0 10px; clear:both;}
+.hdlist li{ background:none!important; min-height:80px;border-bottom:none!important; overflow:hidden; padding-left:0px!important; margin-top:25px; margin-bottom:10px;}
+.question{ background:url(../img/reply.gif) no-repeat 10px 7px; font-size:14px; color:#333; min-height:30px;overflow:hidden; line-height:22px; padding-left:33px;}
+.question font,.answer font{font-size:18px;}
+.answer{ background:#f5f5f5 url(../img/hdico1.jpg) no-repeat right bottom;min-height:30px; overflow:hidden; color:#666;line-height:22px;border-bottom: 1px dotted #dedede; padding-top:6px; padding-bottom:10px; padding-right:15px;
+ -moz-border-radius: 4px/*{cornerRadius}*/;
+ -webkit-border-radius: 4px/*{cornerRadius}*/;
+-khtml-border-radius: 4px/*{cornerRadius}*/;
+border-radius: 4px/*{cornerRadius}*/;
+-webkit-border-radius: 4px/*{cornerRadius}*/;
+-khtml-border-radius: 4px/*{cornerRadius}*/;}
+.answer img{margin-top: -10px;margin-right: 6px;}
+.wytw{ height:30px; line-height:30px; float:right; margin:10px 10px 0 0}
+.wytw a{ color:#666; display:block; background:url(../img/jdtbg.gif) repeat-x; width:100px; height:30px; border:1px solid #ddd; text-align:center;}
+.wytw a:hover{ color:#333;border:1px solid #ccc;}
+

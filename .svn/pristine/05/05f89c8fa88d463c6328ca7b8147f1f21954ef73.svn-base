@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+	<title>技能大赛</title>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script src="/${res}/js/jquery-2.1.0.min.js"></script>
+    <script src="/${res}/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="/${res}/js/jquery-often-effects.js"></script>
+    <link rel="stylesheet" href="/${res}/css/reset.css" />
+    <link rel="stylesheet" href="/${res}/css/style.css"/>
+    <link rel="stylesheet" href="/${res}/css/main.css"/>
+
+</head>
+<body onload="showTime()">
+	[#include "../include/计算机专业_标志和搜索.html"/]
+    [#include "../include/计算机专业_页头导航栏.html"/]
+    
+  <!--newscont-->
+<div class="news-cont">
+    <div class="news-cont-left pull-left">
+        <div class="news-cont-title">
+        		
+        		[#if channel.id=872 || channel.parent.id =872 || channel.id=901 || channel.id=902 || channel.id=905 ]
+        			大赛文件 
+        		[#elseif channel.id=906 || channel.id=907 || channel.id=908 ] <!--	赛项规程 -->
+        			赛项规程
+        		[#elseif channel.id=912 || channel.id=913 || channel.id=914 ] <!--	大赛资源-->
+        			大赛资源
+        		[#else]	
+        			${channel.name}
+        		[/#if]
+        </div>
+        <div class="news-nav">
+				<!-- 二级菜单   大赛文件 -->
+				
+				[#if channel.id=872 || channel.parent.id =872 || channel.id=901 || channel.id=902 || channel.id=905 ]
+					<!-- 二级菜单   大赛文件 -->
+					[@cms_channel_list parentId=872] 
+						[#list tag_list as sub]
+	                 		 <ul>
+	                 		 <li class="">
+	                 		 	<a href="${sub.url}">${sub.name}</a>
+	                 		 </ul>
+						[/#list]
+					[/@cms_channel_list]
+				[#elseif channel.id=906 || channel.id=907 || channel.id=908 ] <!--	赛项规程 -->
+					[@cms_channel_list parentId=906] 
+						[#list tag_list as sub]
+	                 		 <ul>
+	                 		 <li class="">
+	                 		 	<a href="${sub.url}">${sub.name}</a>
+	                 		 </ul>
+						[/#list]
+					[/@cms_channel_list]
+				[#elseif channel.id=909] <!--	竞赛项目-->
+					[@cms_channel_list parentId=channel.id] 
+						[#list tag_list as sub]
+	                 		 <ul>
+	                 		 <li class="">
+	                 		 	<a href="${sub.url}">${sub.name}</a>
+	                 		 </ul>
+						[/#list]
+					[/@cms_channel_list]	
+				
+				[#elseif channel.id=912 || channel.id=913 || channel.id=914 ] <!--	大赛资源-->
+					[@cms_channel_list parentId=912] 
+						[#list tag_list as sub]
+	                 		 <ul>
+	                 		 <li class="">
+	                 		 	<a href="${sub.url}">${sub.name}</a>
+	                 		 </ul>
+						[/#list]
+					[/@cms_channel_list]
+				
+				[#else]	
+				
+					<!-- 二级菜单 -->
+					[@cms_channel_list parentId=channel.id] 
+						[#list tag_list as sub]
+	                 		 <ul>
+	                 		 <li class="">
+	                 		 	<a href="${sub.url}">${sub.name}</a>
+	                 		 </ul>
+						[/#list]
+					[/@cms_channel_list]
+				
+					
+				[/#if]
+				
+				
+				
+                
+        </div>
+        <img alt="#" src="../${res}/img/logininfo.jpg">
+    </div>
+    <div class="news-cont-right pull-right">
+        <div class="content-title-dh">
+            <div>
+                	 您当前位置：<a href="/">首页</a>&gt;&gt;
+                	 <!-- <a href="javascript:">新闻中心</a>&gt;&gt;
+                	 <a href="javascript:">大赛文件</a> -->
+                	 [#list channel.nodeList as n]
+			        	[#if n.id!=271]
+			        		[#if n.id!=892]
+			        			<a href="${n.url}">${n.name}</a>
+							            [#if n_has_next] 
+							            	&gt;&gt;
+							            [/#if]
+			        		[/#if]
+			           [/#if]
+			        [/#list]
+                	 
+            </div>
+        </div>
+        <div class="content-right-title">${channel.name}</div>
+        	
+        		[#if channel.id=872 || channel.id=906|| channel.id=909 || channel.id=912 ]
+        			[@cms_content_page count='15' orderBy='4' titLen='45'  dateFormat='yyyy-MM-dd' channelId=channel.id channelOption='1']
+						<div class="content-right-list">
+							<ul>
+								[#list tag_list as a]
+								<li>
+									<a href="${a.url}" target="_blank">[@text_cut s=a.title len=titLen /] 
+									<span  class="time">
+									[${a.date?string(dateFormat)}]</span></a>
+								</li> 
+								[/#list]
+							</ul>
+						</div>
+						<div class="page">
+							
+							<div class="pagesite">
+								[#if tag_pagination.list?size>0]
+				                	[@cms_pagination sysPage='1'/]
+				                [/#if]
+							</div>
+						</div>
+					[/@cms_content_page]
+        		[#else]	
+        			[@cms_content_page count='15' orderBy='4' titLen='45'  dateFormat='yyyy-MM-dd' channelId=channel.id channelOption='2']
+						<div class="content-right-list">
+							<ul>
+								[#list tag_list as a]
+								<li>
+									<a href="${a.url}" target="_blank">[@text_cut s=a.title len=titLen /] 
+									<span  class="time">
+									[${a.date?string(dateFormat)}]</span></a>
+								</li> 
+								[/#list]
+							</ul>
+						</div>
+						<div class="page">
+							
+							<div class="pagesite">
+								[#if tag_pagination.list?size>0]
+				                	[@cms_pagination sysPage='1'/]
+				                [/#if]
+							</div>
+						</div>
+					[/@cms_content_page]
+        		
+        		[/#if]
+        
+        
+        
+        
+        
+    </div>
+</div>
+    [#include "../include/计算机专业_页脚信息栏.html"/]
+</body>
+ <script src="/${res}/js/js.js"></script>
+</html>

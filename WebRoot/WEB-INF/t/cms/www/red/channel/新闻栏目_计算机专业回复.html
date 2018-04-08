@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>计算机应用专业网站</title>
+<meta http-equiv="keywords" content="洛南精品课程"/>
+<meta http-equiv="description" content="洛南精品课程"/>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link href="/${res}/css/stylesy.css" rel="stylesheet" type="text/css">
+<link href="/${res}/css/base01.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/${res}/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/${res}/js/jquery.imgScroll.js"></script>
+<script type="text/javascript">
+		var count ;
+		$(document).ready(function(){
+				var type=$("#type").val();
+				$.ajax({
+   							 url:"/dqjyadmin/findmessage.do",
+  						     async:"true",
+  						     data:"type="+type,
+   							 success:function(json){
+   							 	if(json.length!=0){
+   							 		 $.each(json, function(i, m){
+   							 	  		if(m!=''&&i!=json.length-1){
+   							 	  			$(".hdlist").append("<li><p class='question'><font>问：</font> "+m.question+"</p><div class='answer'><img src='../${res}/img/zyhdico.jpg' width='26' height='21'/><font>答：</font> "+m.huida+"</div></li>");
+   							 	  		}
+   							 	  		if(i==json.length-1){
+   							 	  			count=m.pageCount;
+   							 	  			for(var i=1;i<=count;i++){
+   							 	  				if(1==i){
+   							 	  					$("#sele").append(" <option value="+i+" selected='selected'>"+i+"</option>");
+   							 	  				}
+   							 	  				else{
+   							 	  					$("#sele").append(" <option value="+i+" >"+i+"</option>");
+   							 	  				}
+   							 	  			}
+   							 	  			$(".size").html(m.pageNow);
+   							 	  			$(".pageNow").html(m.pageStr);
+   							 	  			$(".pageCount").html(m.pageCount);
+   							 	  		}	
+   							 	  	});
+   							 	}else{
+   							 			$(".hdlist").append("<li><p class='question'>暂无内容!</p></li>");
+   							 	}
+  							}	
+			 			});
+			 $("#put").click(function(){
+					var isEmail=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+					var  name  =$("#sendname").val();
+					var profession=$("#profession").val();
+					var phone =$("#phone").val();
+					var email=$("#email").val();
+					var question =$("question").val();
+					if (name==""){
+						alert("姓名不能为空!");
+						$("#sendname").focus();
+						return false;
+					}
+					if(question==""){
+						alert("问题不能为空!");
+						return false;
+					}
+        			if(!isEmail.test($("#email").val())){
+        				alert("请正确填写邮箱，例如:1324567@qq.com!");
+        				return false;
+        			}
+			 	 	$.ajax({
+   							 url:"/dqjyadmin/addmessage.do?",
+   							 type:"post",
+   							 data:$("#messForm").serialize(),
+  						     async:"true",
+   							 success:function(sus){
+   							 	if(sus=="true"){
+   							 		alert("你的问题已经提交");
+   							 		closeask();  							 		
+   							 	}else{
+   							 		alert("失败，重新提交");
+   							 	}	
+  							}	
+			 			});
+			 		}); 
+		});
+		function pageDown(){
+			
+				if(Number($(".pageNow").html())>count){
+					alert($(".pageNow").html());
+					$(".pageNow").html(count);
+				}
+				var type=$("#type").val();
+				var now =Number($(".pageNow").html())+1;
+				conmmon(type,now);
+		}
+		function pageUp(){
+				if(Number($(".pageNow").html())<1){
+						alert(Number($(".pageNow").html()));
+						$(".pageNow").html(1);
+				}
+				var type=$("#type").val();
+				var now =Number($(".pageNow").html())-1;
+				conmmon(type,now);
+				
+		}
+		function changePage(pageStr){
+			var type=$("#type").val();
+			now =$("#sele").val();
+			conmmon(type,now);
+			
+		}
+		
+		function fistpage(pageStr){
+			var type=$("#type").val();
+			now =pageStr;
+			conmmon(type,now);
+		}
+		
+		function lastpage(){
+			var type=$("#type").val();
+			now =count;
+			conmmon(type,now);
+		}
+		
+		function conmmon(type,now){
+			$.ajax({
+						url:"/dqjyadmin/findmessage.do",
+  						async:"true",
+  						type:"post",
+  						data:"type="+type+"&&pagStr="+now,
+   					    success:function(json){
+   						if(json.length!=0){
+   									$(".hdlist").html("");
+   							 		 $.each(json, function(i, m){
+   							 	  		if(m!=''&&i!=json.length-1){
+   							 	  			$(".hdlist").append("<li><p class='question'><font>问：</font> "+m.question+"</p><div class='answer'><img src='../${res}/img/zyhdico.jpg' width='26' height='21'/><font>答：</font> "+m.huida+"</div></li>");
+   							 	  		}
+   							 	  		if(i==json.length-1){
+   							 	  			count=m.pageCount;
+   							 	  			$(".size").html(m.pageNow);
+   							 	  			$(".pageNow").html(m.pageStr);
+   							 	  			$(".pageCount").html(m.pageCount);
+   							 	  		}		
+   							 	  	});
+   						}else{	
+   									$(".hdlist").html("");
+   							 		$(".hdlist").append("<li><p class='question'>暂无内容!</p></li>");
+   							 }
+  						}							
+				});
+		}
+
+</script>
+<script type="text/javascript">
+function askinfo(){
+$("#askbox").css("display","block");
+$(".zhezhao").css("display","block");
+
+}
+function closeask(){
+$("#askbox").css("display","none");
+$(".zhezhao").css("display","none");
+
+}
+</script>
+</head>
+<body>
+	[#include "../include/计算机专业_标志和搜索.html"/]
+    [#include "../include/计算机专业_页头导航栏.html"/]
+<div class="container">
+ <div class="concent">
+         <div class="left">
+           [#assign flag=false]
+            [#assign cnnid=channel.id]
+            [#assign isdanye=false]
+            [@cms_channel_list parentId=271]
+            [#list tag_list as c]
+            	[#if c.id==channel.id]
+            		[#assign flag=true]
+            	[/#if]
+            [/#list]
+            [/@cms_channel_list]
+            [#if !flag]
+            	[#if channel.parent.id!=271]
+            	[#assign cnnid=channel.parent.id]
+            	[#else]
+            	[#assign isdanye=true]
+            	[/#if]
+            [/#if]
+            [@cms_channel id=cnnid]
+            <h2>${tag_bean.name}</h2>
+            [/@cms_channel]
+            [#if isdanye]
+            	<h2>师资建设</h2>
+            [/#if]
+            [#assign connsid=0]
+            <ul>
+            [@cms_channel_list parentId=cnnid]
+            [#list tag_list as c]
+            	<li>
+            	<a href="${c.url}" [#if c.id==channel.id||(flag&&c_index==0)]class="check"[#assign connsid=c.id][/#if]>${c.name}</a>
+            	</li>
+            [/#list]
+            [/@cms_channel_list]
+           </ul>
+        <!--  <h3>友情链接</h3>
+           [@cms_content_list count='5'  orderBy='4' titLen='20' channelOption='1' channelId='833']
+            [#list tag_list as a]
+            	<a href="http://${a.originUrl}" target="_blank"></a>
+            	<li><a href="http://${a.originUrl}" target="_blank">${a.title}</a></li>
+            [/#list]
+ 			[/@cms_content_list]- -->  
+          <p class="sxjdimg"><img src="../${res}/img/indeximg/img8.jpg" width="200" height="162"/></p>
+         </div>
+         <div class="right">
+            <ul>
+             [#if connsid==0]
+           	[#assign connsid=channel.id]
+           [/#if]
+            <h3><p>您当前位置是：<a href="${base}/">首页</a>—>[#list channel.nodeList as n][#if n.name!='精品课程'&&n.name!='专业平台栏目'&&n.name!='首页栏目'&&n.id!=80]<a href="${n.url}">${n.name}</a>[#if n_has_next] > [/#if][/#if][/#list]</p></h3>
+         	 <div class="hdjlbox">
+          <p class="wytw"><a href="#" onclick="askinfo();">我要提问</a></p>
+          <ul class="hdlist">
+          </ul>
+           <div class="page">
+                <div class="pagesite"><div>
+                  共<a class="size">0</a>条记录 <a class="pageNow"></a>/<a class="pageCount"></a>页
+                &nbsp;<a  onclick="fistpage(1)">首页</a> <a  onclick="pageUp()">上一页</a>&nbsp;<a  onclick="pageDown()">下一页</a> <a disabled="disabled" onclick="lastpage()">尾页</a>
+                &nbsp;第<select id="sele" onchange="changePage(this)">
+                 </select><lect>页
+             </div> </div>
+              
+            </div>
+            </div>
+            </ul>
+         </div>
+      </div>
+<div class="clear"></div>
+</div>
+    [#include "../include/计算机专业_页脚信息栏.html"/]
+        <div class="askinfo" id="askbox" style="display: none;">
+ <p onclick="closeask();" class="closeask">X</p>
+<form  method="post" id="messForm" style="position: relative;">
+ <p class="askinfo_t">我要提问</p>
+<input type="hidden" value=${channel.id} name="type" id="type"/>
+<input type="hidden" value="高星级饭店运营与管理" name="course" id="course"/>
+ <table class="askinfotable">
+ <tr><td align="right"><label>姓名：</label></td><td><input  type="text" class="askinput" name="sendname" id="sendname" /><b style="color: red;">*</b></td></tr>
+ <tr><td align="right"><label>性别：</label></td><td><input  type="radio" name="sex" id="sex" value="0"/> 男 &nbsp;&nbsp;&nbsp;<input  type="radio" name="sex" id="sex" value="1"/> 女</td></tr>
+ <tr><td align="right"><label>职业：</label></td><td><input  type="text" class="askinput" name="profession" id="profession" /></td></tr>
+ <tr><td align="right"><label>联系电话：</label></td><td><input  type="text" class="askinput" name="phone" id="phone" /></td></tr>
+ <tr><td align="right"><label>联系邮箱：</label></td><td><input  type="text" class="askinput" name="email" id="email" /><b style="color: red;">*</b></td></tr>
+ <tr><td align="right">问题描述：</td><td><textarea rows="10" cols="50"  class="asktextarea" name="question" id="question" ></textarea><b style="color: red;">*</b></td></tr>
+ <tr><td></td><td><button type="button" class="askbutton" name="put" id="put" >提交</button>
+<button type="reset" class="askbutton"   >重置</button></td></tr>
+</table>
+     </form>
+</div>     
+<div class="zhezhao" style="display: none;" ></div>   
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>计算机应用专业网站</title>
+		<#include "/dqjy_sys/head.html"/>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script src="${base}/res/common/js/jquery.js" type="text/javascript"></script> 
+    <script src="${base}/res/common/js/onlineExam.js" type="text/javascript"></script> 
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+  </head>
+
+
+
+  <style type="text/css" >
+  *{margin: 0px;padding: 0;}
+
+  		body{background:#f5eed2;
+  			font-family: "微软雅黑";
+  		}
+  		.top{background:#f8fdfe url(${base}/res/common/img/top_c.png);background-repeat:repeat-x;width: 100%;height: 152px;
+  		position: fixed;top:0px;z-index: 200;}
+  		.top_l{float: left;background:url(${base}/res/common/img/top_l.png);background-repeat:no-repeat;width: 566px;height: 152px;}
+  		.top_l{float: right;background:url(${base}/res/common/img/top_r.png);background-repeat:no-repeat;width:437px;height: 152px;}
+  		.topbox{width:1000px;margin: 0 auto;}
+  		.logo{margin-top:30px;float: left;margin-left: -20px;}
+  		.logo_r{float: right;margin-top:58px;}
+  		.all{background:#fff url(${base}/res/common/img/allbg.png);background-position:0px 30px;background-repeat:repeat-y; clear:both; border:1px solid #ccc;width: 100%;
+  		width: 1000px;margin: 0 auto;padding: 20px 0;margin-top: 30px;
+  		position: relative;top:170px;margin-bottom:200px;}
+  		.allcont{float: left;margin-left:100px;border-left:2px dotted #333;padding:20px;width: 840px;}
+  		
+  		.titleType{
+  			margin:30px 0;padding-bottom:20px; 
+  		}
+  		.titleType span{
+  			font-size:16px;color:#121212;
+  			width:  800px;font-weight:bold; 
+  			height: 30px;
+  			line-height: 30px;
+  		}
+  		.title{text-align: center;border-bottom: 1px dashed #aaa}
+  		.title span{
+  			font-size:20px;color:#333;
+  			width:  800px; 
+  			height: 30px;
+  			line-height: 30px;
+  		}
+  		.zhanshi{
+  			margin-top:2px;
+  			width: 840px; margin:0 auto; 
+  			padding-top: 10px;
+  			text-align: left;
+  		}
+  		.zhanshi dl{clear: both;}
+  		.zhanshi dl dt{font-size: 15px;line-height: 30px;color: #000;}
+  		.zhanshi dl dd{font-size: 14px;line-height: 33px;min-height:5px;overflow: hidden;}
+  		.zhanshi dl dd input{margin:6px;border:1px solid #ddd;height: 24px;}
+  		.zhanshi dl dd input.inputradio{margin: 0 6px;height: auto;border: none;}
+  		.bt{
+  			
+  			display:block;
+  			height:35px;
+  			line-height:35px;
+  			width:840px;margin:0 auto; background:#eee;
+  			text-align: center;cursor: pointer;font-size: 14px;color: #333;clear: both;margin-top: 20px;
+  		transition:All 0.4s ease-in-out;    -webkit-transition:All 0.4s ease-in-out;    -moz-transition:All 0.4s ease-in-out;    -o-transition:All 0.4s ease-in-out;}
+  		.bt:hover{background:#1a3225;color: #fff;}
+  		.inlineBlock{margin-bottom: 15px;
+  			width:840px;background:#eee;font-weight:normal;
+  			height:35px;
+  			line-height:35px;
+  			display:block;float:left;
+  			margin-right: 10px;
+  			text-align: center;cursor: pointer;font-size: 14px;color: #333;margin-top: 10px;
+  		transition:All 0.4s ease-in-out;    -webkit-transition:All 0.4s ease-in-out;    -moz-transition:All 0.4s ease-in-out;    -o-transition:All 0.4s ease-in-out;
+  		}
+  		.inlineBlock:hover{background:#1a3225;color: #fff;}
+  		.answerbuton{position:fixed;right:0px;top: 300px;}
+  		
+  		.answerbuton a{display: block;width:90px;text-align:center; background: #9a9899;height: 35px;line-height: 37px;color: #1c3027;
+  		font-size:15px;margin-left: 1px;transition:All 0.4s ease-in-out;    -webkit-transition:All 0.4s ease-in-out;    -moz-transition:All 0.4s ease-in-out;    -o-transition:All 0.4s ease-in-out;
+  		cursor: pointer;}
+  		.answerbuton a:hover{background:#1a3225;color: #fff;}
+  		.answerbuton a.answerbutoncheck{display: block;width:90px;text-align:center; background: #1a3225;height: 35px;line-height: 37px;color: #fff;
+  		font-size:15px;margin-left: 1px;transition:All 0.4s ease-in-out;    -webkit-transition:All 0.4s ease-in-out;    -moz-transition:All 0.4s ease-in-out;    -o-transition:All 0.4s ease-in-out;
+  		cursor: pointer;}
+  		.retrun{background: #f68f16!important}
+  		
+  		.clear{clear: both;}
+  		.textarea{width:838px;height:100px;border:1px solid #ddd;}
+  		
+  		.cpbotombox{background:#fff;width: 1000px;margin: 0 auto;height:40px;line-height: 40px;font-size: 14px;
+  		color: #333;margin-top:20px;margin-bottom: 30px;border:1px solid #ccc;}
+  		.cpbotom_l{float: left;margin-left: 20px;}
+  		.cpbotom_r a{color: #1d7cc6}
+  		.cpbotom_r a:hover{text-decoration: underline;}
+  		.cpbotom_r{float: right;margin-right: 20px;}
+  		.pic{position: fixed;top: 250px;left: 0;}
+  		.botom_l{position: fixed;bottom: 60px;left: 0;}
+  		.botom_r{position: fixed;bottom: 60px;right: 0;z-index: -1;}
+  		
+  		.foot{position:fixed;bottom:0px; background:#152b1e;height: 60px;color: #fff;text-align: center;font-size: 14px;padding-top:20px;line-height: 24px;z-index: 100;width: 100% }
+  </style>
+  
+  <script type="text/html" id="choiceQuestion">
+			<dl>
+   				<dt  >{{xuanzeTiNumber}}.{{m.content}} <b id="chooseHint_{{j}}"></b></dt>
+				   {{each m.answers as item i}}
+						<dd>{{idnex[i]}}：{{item.answer}} 	<input type="radio" class="inputradio"  id="awandRadio_{{j}}" name="awandRadio_{{j}}" value="{{item.isright}}" /></dd>
+				{{/each}}
+   			</dl>
+</script>
+<script type="text/html" id="panduanTi">
+				<dl>
+   					<dt >{{panduanTiNumber}}.{{m.content}} <b id="panduTi_{{j}}"></b></dt>
+   					<dd><input  type="radio" class="inputradio" id="panduRadio_{{j}}" name="panduRadio_{{j}}" {{ if m.answers[0].answers=='1' }}value=1{{/if}} />对</dd>
+   					<dd><input  type="radio" class="inputradio"  id="panduRadio_{{j}}" name="panduRadio_{{j}}" {{ if m.answers[0].answers!='0' }}value="0"{{/if}} />错</dd>
+   				</dl>
+</script>
+<script type="text/html" id="jiandaTi" >
+  			<dl>
+   				<dt >{{jiandaTiNumber}}.{{m.content}} <b id="jianda_{{j}}"></b></dt>
+   				<dd><textarea class="textarea" id="jiandaTextarea_{{j}}"></textarea> </dd>
+				<dd><span id="daan_{{j}}" style="display:none;color:green;" ><b>答案:{{m.answers[0].answer}} </span></dd>
+				<dd><a class=' inlineBlock' onclick='isjiandaTiRight({{j}})' style='margin-right:0;'>提交答案</a></dd>
+   			</dl>
+</script>
+
+  <body>
+  <input name="retUrl" type="hidden" value="${retUrl}"/>
+  <div class="top">
+<div class="top_l"></div>
+<div class="topbox">
+<img src="${base}/res/common/img/logo.png" width="409" height="90" class="logo" />
+<img src="${base}/res/common/img/logo_r.png" width="330" height="50" class="logo_r" />
+</div>
+<div class="top_r"></div>
+</div>
+ 
+ <div class="pic">
+<img src="${base}/res/common/img/pic.png" width="254" height="87" />
+</div>
+ 
+ <div style="width: 100%;margin-bottom:120px;">
+ <div class="answerbuton">
+	 <a href="#checkbox" class="answerbutoncheck" onclick="checkAnswer(this,'#checkbox')">选择题</a>
+	 <a  href="#tiankongbox" onclick="checkAnswer(this,'#tiankongbox')">填空题</a>
+	 <a href="#panduanbox" onclick="checkAnswer(this,'#panduanbox')">判断题</a>
+	 <a  href="#answerbox" onclick="checkAnswer(this,'#answerbox')">简答题</a>
+	<a  href="${retUrl}" class="retrun">返回</a>
+ </div>
+<div class="all">
+ 
+ <div class="allcont">
+ 
+  <div class="title">
+  		<span><font style="font-size: 27px;font-family:微软雅黑 ;letter-spacing: 2px;color: #333;">${describe}</font> <br /><font style="font-size: 14px;color: #888;"></font></span>
+  		<input type="hidden" id="examinationid"  value="${examinationid}"  />
+ </div>
+ 
+  		<div  class="titleType" id="checkbox">
+   		<span > 选择题</span>
+   		<div class="zhanshi" id="xuanze">
+   		</div>
+   		</div>
+   		<div class="titleType" id="tiankongbox" >
+   		<span> 填空题</span>
+   		<div class="zhanshi"  >
+   				<dl id ="tiankong_titi">
+   				</dl>
+   				<div id="tishi" style="color: green;font-weight:bold;">
+   					<dl>
+   						
+   					</dl>
+   				
+   				</div>
+   				
+   		</div>
+   		
+   		</div>
+   		<div class="titleType" id="panduanbox" >
+   		<span> 判断题</span>
+   		<div class="zhanshi" id="panduanTi_titi">
+   		
+   		</div>
+   		</div>
+   		<div class="titleType" id="answerbox" >
+   		
+   		<span> 简答题</span>
+   		<div class="zhanshi" id="jianda_titi">
+   		</div>
+   		</div>
+   		<div class="clear"></div>
+   		</div>
+   		   		<div class="clear"></div>
+   		
+   		<div class="cpbotom">
+ 
+ </div>
+   		
+   		</div>
+   		
+ <div class="cpbotombox">
+   		<#if prevExam??>
+		 	<div class="cpbotom_l">上一篇：
+			<a href='/dqjyadmin/jcExamination/goAnswerpaper.do?examinationid=${prevExam.id}&describe=${prevExam.describe}&tm=${prevExam.createdate}&channelId=${channelId}&retUrl=${retUrl}'>${prevExam.describe}</a>
+		 	</div>
+   		</#if>
+   		<#if nextExam??>
+		  	<div class="cpbotom_r">下一篇：
+				<a href='/dqjyadmin/jcExamination/goAnswerpaper.do?examinationid=${nextExam.id}&describe=${nextExam.describe}&tm=${nextExam.createdate}&channelId=${channelId}&retUrl=${retUrl}'>${nextExam.describe}</a>
+		  	</div>
+			
+   		</#if>
+ </div>   		
+</div>   		
+
+	<div class="botom_l"><img src="${base}/res/common/img/botom_l.png" width="232" height="219" /></div>
+	<div class="botom_r"><img src="${base}/res/common/img/botom_r.png" width="301" height="276" /></div>
+
+	<div class="foot">
+		学校地址：陕西省洛南县|邮编：726100|电话：0914-7380851|电子邮箱：lnzjzxbgs@163.com<br />
+		版权所有：Copyright 2013-2015 洛南县职业技术教育中心 陕ICP备15013502号
+	</div>
+ 	<script type="text/javascript">
+ 		//
+ 		function checkAnswer(obj,id){
+ 			$(".answerbutoncheck").removeClass();
+ 			$(obj).addClass("answerbutoncheck");
+ 			$("html,body").animate({scrollTop: $(id).offset().top-150}, 1000);//滑动到指定位置
+ 		}
+ 	</script>
+  </body>
+</html>

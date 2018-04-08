@@ -1,0 +1,159 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<style type="">
+	.divQuestion{
+		
+		margin-bottom:10px;
+	}
+	.divQuestionbox{margin: 20px;}
+	.Questiontext{width: 500px;height: 25px;line-height: 25px;border: 1px solid #ddd;}
+	.required{width: 500px;height: 29px;line-height: 29px;border: 1px solid #ddd;}
+	.addbuton{background: #eee;border: 1px solid #ddd;text-align: center;padding: 6px 12px;cursor: pointer;margin-bottom: 15px;margin-top: 15px;}
+	.addbuton:hover{border: 1px solid #bbb;}
+	.submitbuton{padding:5px 12px;cursor: pointer;}
+	.textareatext{border: 1px solid #ddd;width:800px;height:80px;}
+	.clear{clear: both;}
+	.answerlist{margin-top: 5px;float: left;}
+	.answerlist li{line-height: 30px;}
+	.delet{display: block;clear: both;background: #ddd;width: 100%;height: 33px;line-height: 33px;text-align: center;font-size: 14px;}
+	.delet:hover{background: #bbb;color: #333}
+	.addtitle{height: 35px;line-height: 35px;font-size: 14px;background: #e5e5e5;padding:0 10px;width: 150px;text-align: center;margin: 0;margin-bottom: 25px;}
+	
+</style>
+	<script type="text/html" id="qList">
+		{{each list as item i}}
+		<div style="margin-bottom:10px;background-color:#f5f5f5;border-top:2px solid #eee;">
+			<p class="addtitle">添加{{qName[item.classtype]}}题</p>
+			<div style="margin-left:20px;">	
+				<labell style="vertical-align:top;">
+				{{qName[item.classtype]}}题
+				</label>
+				<input type="hidden"  name="questions[{{i}}].id" value="{{item.id}}" />
+				<input type="hidden"  name="questions[{{i}}].classtype" value="{{item.classtype}}" />
+				<input type="hidden" name="questions[{{i}}].number" value="{{item.number}}" />
+				<textarea rows="3"  cols="80" name="questions[{{i}}].content" class="textareatext" maxLength="500"  placeholder="添加问题内容">{{item.content}}</textarea>
+			</div>
+			{{if item.classtype=='1'}}
+				<div style="margin-top:25px;margin-left:20px;margin-bottom:15px;">
+					<label style="float:left">答案：</label>
+					<ul class="answerlist">
+						{{each item.answers as answer j}}
+							<li>{{latter[j]}}:
+								<input type="hidden"  name="questions[{{i}}].answers[{{j}}].id" value="{{answer.id}}"/>
+								<input type="text"  required="true" name="questions[{{i}}].answers[{{j}}].answer" value="{{answer.answer}}"/>
+								<input type="checkbox" onclick="answerChecked(this)"  name="questions[{{i}}].answers[{{j}}].isright" {{if answer.isright=='1'}}checked="checked"{{/if}} value="1"/>正确答案</li>
+						{{/each}}
+					</ul>
+				</div>
+			{{/if}}
+			{{if item.classtype=='2'}}
+				<div style="margin-top:25px;margin-left:20px;margin-bottom:15px;">
+					<label style="vertical-align:top;">答案：</label>
+					<input type="hidden"  name="questions[{{i}}].answers[0].id" value="{{item.answers[0].id}}"/>
+					<textarea rows="3" required="true" name="questions[{{i}}].answers[0].answer" cols="80" class="textareatext"  maxLength="500"  placeholder="添加问题答案">{{item.answers[0].answer}}</textarea>
+				</div>
+			{{/if}}
+			{{if item.classtype=='3'}}
+				<div style="margin-top:25px;margin-left:20px;margin-bottom:15px;">
+					<label  style="vertical-align:top;float:left">答案：</label>
+					<ul class="answerlist">
+							<input type="hidden"  name="questions[{{i}}].answers[0].id" value="{{item.answers[0].id}}"/>
+							<li>
+									<input type="radio"   name="questions[{{i}}].answers[0].answer" {{if item.answers[0].answer=='1'}}checked="checked"{{/if}}  value="1"  />
+									正确
+									<input type="radio"   name="questions[{{i}}].answers[0].answer" {{if item.answers[0].answer!='1'}}checked="checked"{{/if}}  value="0"  />
+									错误
+							</li>
+					</ul>
+				</div>
+			{{/if}}
+			{{if item.classtype=='4'}}
+				<div style="margin-top:25px;margin-left:20px;margin-bottom:15px;">
+					<label style="vertical-align:top;">答案：</label>
+					<input type="hidden"  name="questions[{{i}}].answers[0].id" value="{{item.answers[0].id}}"/>
+					<textarea rows="3" required="true" name="questions[{{i}}].answers[0].answer" cols="80"  maxLength="500"  class="textareatext"   placeholder="添加问题答案">{{item.answers[0].answer}}</textarea>
+				</div>
+			{{/if}}
+			<a href="#" onclick="delAjaxQuestion('{{item.id}}',this)" class="delet" >删除问题</a>
+		</div>
+		{{/each}}
+	</script>
+	<script type="text/html" id="choiceQuestion">
+		<div style="margin-bottom:10px;background-color:#f5f5f5;border-top:2px solid #eee;">
+			<p class="addtitle">添加选择题</p>
+			<div style="margin-left:20px;">	
+				<label style="vertical-align:top;" >选择题：</label>
+				<input type="hidden" required="true" name="questions[{{i}}].classtype" value="1" />
+				<input type="hidden" name="questions[{{i}}].number" value="{{i}}" />
+				<textarea rows="3"  cols="80" name="questions[{{i}}].content"  class="textareatext"  maxLength="500" placeholder="添加问题内容"></textarea>
+			</div>
+			<div style="margin-top:25px;margin-left:20px;margin-bottom:15px;">
+				<label style="float:left">选项答案：</label>
+				<ul class="answerlist">
+					<li>A:<input type="text"  required="true" name="questions[{{i}}].answers[0].answer"/><input type="checkbox"  name="questions[{{i}}].answers[0].isright" value="1"/>正确答案</li>
+					<li>B:<input type="text" required="true" name="questions[{{i}}].answers[1].answer"/><input type="checkbox" name="questions[{{i}}].answers[1].isright" value="1" />正确答案</li>
+					<li>C:<input type="text" required="true" name="questions[{{i}}].answers[2].answer"/><input type="checkbox" name="questions[{{i}}].answers[2].isright" value="1" />正确答案</li>
+					<li>D:<input type="text" required="true" name="questions[{{i}}].answers[3].answer"/><input type="checkbox"  name="questions[{{i}}].answers[3].isright" value="1"/>正确答案</li>
+				</ul>
+			</div>
+			<a href="#"  onclick="delQuestion(this)" class="delet">删除问题</a>
+			<div class="clear"></div>
+		</div>
+	</script>
+	<script type="text/html" id="fillBlankQuestion">
+		<div style="margin-bottom:10px;background-color:#f5f5f5;border-top:2px solid #eee;">
+			<p class="addtitle">添加填空题</p>
+			<div style="margin-left:20px;">
+				<p>示例：问题内容：农作物复种有___复种、___复种、___复种、___复种四种形式。</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;答案内容：接茬，移栽，套作，再生</p>
+			</div>
+			<div style="margin-left:20px;">					
+				<label style="vertical-align:top;" >填空题：</label>
+				<input type="hidden" required="true" name="questions[{{i}}].classtype" value="2" />
+				<input type="hidden" name="questions[{{i}}].number" value="{{i}}" />
+				<textarea rows="3"  cols="80" name="questions[{{i}}].content"  maxLength="500"  class="textareatext" placeholder="添加问题内容"></textarea>
+			</div>
+				<div style="margin-top:25px;margin-left:20px;margin-bottom:15px;">
+					<label style="vertical-align:top;" ><span style="letter-spacing:3px;vertical-align:top;">答案：</span></label>
+					<textarea rows="3" required="true" name="questions[{{i}}].answers[0].answer" maxLength="500" cols="80" oninvalid="setCustomValidity('请给该问题添加标准答案。');" oninput="setCustomValidity('');"   class="textareatext" placeholder="添加问题答案"></textarea>
+				</div>
+				<a href="#"  onclick="delQuestion(this)" class="delet">删除问题</a>
+			<div class="clear"></div>
+		</div>
+	</script>
+	<script type="text/html" id="trueFalseQuestion">
+		<div style="margin-bottom:10px;background-color:#f5f5f5;border-top:2px solid #eee;">
+			<p class="addtitle">添加判断题</p>
+			<div style="margin-left:20px;">
+			<label style="vertical-align:top;">判断题：</label>
+			<input type="hidden" required="true" name="questions[{{i}}].classtype" value="3" />
+			<input type="hidden" name="questions[{{i}}].number" value="{{i}}" />
+			<textarea rows="3"  cols="80" name="questions[{{i}}].content" class="textareatext"  maxLength="500" placeholder="添加问题内容"></textarea>
+			</div>
+			<div style="margin-top:25px;margin-left:20px;margin-bottom:15px;">
+				<label style="vertical-align:top;float:left">答案：</label>
+				<ul class="answerlist">
+					<li><input type="radio"   name="questions[{{i}}].answers[0].answer" required="true" value="1"/>正确</li>
+					<li><input type="radio"  name="questions[{{i}}].answers[0].answer" value="0"/>错误</li>
+				</ul>
+			</div>
+			<a href="#"  onclick="delQuestion(this)" class="delet">删除问题</a>
+			<div class="clear"></div>
+		</div>
+	</script>
+	<script type="text/html" id="answerQuestion">
+		<div style="margin-bottom:10px;background-color:#f5f5f5;border-top:2px solid #eee;">
+			<p class="addtitle">添加简答题</p>
+			<div style="margin-left:20px;">
+			<label style="vertical-align:top;">简答题：</label>
+			<input type="hidden" required="true" name="questions[{{i}}].classtype" value="4" />
+			<input type="hidden" required="true" name="questions[{{i}}].number" value="{{i}}" />
+			<textarea rows="3" cols="80" name="questions[{{i}}].content" class="textareatext"  maxLength="500" placeholder="添加问题内容"></textarea>
+			</div>
+			<div  style="margin-top:25px;margin-left:20px;margin-bottom:15px;">
+				<label style="vertical-align:top;letter-spacing:4px;">答案：</label>
+				<textarea rows="3" required="true" name="questions[{{i}}].answers[0].answer" maxLength="500" oninvalid="setCustomValidity('请给该问题添加一个标准答案。');" oninput="setCustomValidity('');"  class="textareatext" cols="80"  placeholder="添加问题答案"></textarea>
+			</div>
+			<a href="#"  onclick="delQuestion(this)" class="delet">删除问题</a>
+			<div class="clear"></div>
+		</div>
+	</script>

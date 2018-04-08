@@ -1,0 +1,33 @@
+<div id="playBox">
+    <div class="pre"></div>
+    <div class="next"></div>
+    <div class="smalltitle">
+      <ul>
+        [@cms_content_list count='5' channelOption='1' channelId='79']
+                                    [#list tag_list as a]
+                                    <li [#if a_index==0]class="thistitle"[/#if]></li>
+                                    [/#list]
+        [/@cms_content_list]
+      </ul>
+    </div>
+    <ul class="oUlplay" id="oUlplay">
+    	[@cms_content_list count='5' channelOption='1' channelId='79']
+                                    [#list tag_list as a]
+                                    <li><a href="${a.url!''}"><img src="${a.titleImg!site.defImg}" /></a></li>
+                                    [/#list]
+        [/@cms_content_list]
+    </ul>
+  </div>
+  
+    <div class="nav">
+     <div class="nav01">
+       <ul>
+          <li>[@cms_channel id='81']<a href="${tag_bean.url}">璇剧▼棣栭〉</a>[/@cms_channel]</li>
+    		[@cms_channel_list parentId=62]
+    		[#list tag_list as c]
+    			<li><a href="${c.url}">${c.name!}</a></li>
+			[/#list]
+    		[/@cms_channel_list]
+       </ul>
+     </div>
+  </div>

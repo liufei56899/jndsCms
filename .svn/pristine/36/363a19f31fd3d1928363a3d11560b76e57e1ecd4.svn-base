@@ -1,0 +1,195 @@
+/*----------------------------------------------RESET CSS----------------------------------------------*/
+/* 清除内外边距 */
+*{ font-family:"微软雅黑"; font-size:12px;}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, legend, button, input, textarea,form, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+
+i{ font-style:normal}
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+
+/* 重置列表元素 */
+ol, ul, li { list-style: none; }
+
+/* 重置文本格式元素 */
+
+abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+q:before, q:after { content: ''; }
+
+/* 重置表单元素 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+    outline: none;
+}
+
+/* 重置表格元素 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 重置 hr */
+hr {
+    border: none;
+    height: 1px;
+}
+
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html { overflow-y: scroll; }
+
+label,
+select,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] { cursor: pointer;  }
+
+img{border: 0;}
+a{text-decoration: none; color:#3172ac;}
+a:hover{text-decoration: none;}
+
+
+body{overflow-x: hidden;}
+.clear{ clear:both;}
+
+
+.header{ width:100%; height:90px;}
+.header .header01{ width:980px; height:70px; margin:0 auto; padding:10px;background: url(../img/yingyu/header01_r.png) no-repeat;background-position: right bottom;}
+.header .header01 p{float:right; *margin-top:-50px;}
+.header .header01 p a{ color:#666;}
+.header .header01 p a:hover{text-decoration: underline;}
+
+.nav{ width:100%; height:40px; background:#0099e9;}
+.nav .nav01{ width:1000px; height:40px; margin:0 auto;}
+.nav .nav01 ul li{ line-height:40px; float:left;}
+.nav .nav01 ul li a{ font-size:14px; color:#fff; padding:0px 13px;}
+.nav .nav01 ul li a:hover{ border-top:3px solid #0099e9; line-height:37px; display:block; background:#fff; color:#0099e9;}
+.nav .nav01 ul li a.check{ border-top:3px solid #0099e9; line-height:37px; display:block; background:#fff; color:#0099e9;}
+
+.focus{ position:relative; height:380px; background-color: #000; float: left; margin-bottom:10px;}  
+.focus img{ height: 380px;} 
+.focus .shadow .title{width: 260px; height: 65px;padding-left: 30px;padding-top: 20px;}
+.focus .shadow .title a{ text-decoration:none; color:#fff; font-size:14px; font-weight:bolder; overflow:hidden; }
+.focus .btn{ position:absolute; bottom:34px; left:510px; overflow:hidden; zoom:1;} 
+.focus .btn a{position:relative; display:inline; width:13px; height:13px; border-radius:7px; margin:0 5px;color:#B0B0B0;font:12px/15px "\5B8B\4F53"; text-decoration:none; text-align:center; outline:0; float:left; background:#D9D9D9; }  
+.focus .btn a:hover,.focus .btn a.current{  cursor:pointer;background:#fc114a;}  
+.focus .fPic{ position:absolute; left:0px; top:0px; }  
+.focus .D1fBt{ overflow:hidden; zoom:1;  height:16px; z-index:10;  }  
+.focus .shadow{ width:100%; position:absolute; bottom:0; left:0px; z-index:10; height:80px; line-height: 80px; background:rgba(0,0,0,0.6);    
+filter:progid:DXImageTransform.Microsoft.gradient( GradientType = 0,startColorstr = '#80000000',endColorstr = '#80000000')\9;  display:block;  text-align:left; }  
+.focus .shadow a{ text-decoration:none; color:#fff; font-size:20px; overflow:hidden; margin-left:10px; font-family: "\5FAE\8F6F\96C5\9ED1";}  
+.focus .fcon{ position:relative; width:100%; float:left;  display:none; background:#000  }  
+.focus .fcon img{ display:block; }  
+.focus .fbg{bottom:25px; right:40px; position:absolute; height:21px; text-align:center; z-index: 200; }  
+.focus .fbg div{margin:4px auto 0;overflow:hidden;zoom:1;height:14px}    
+.focus .D1fBt a{position:relative; display:inline; width:12px; height:12px; border-radius:7px; margin:0 5px;color:#B0B0B0;font:12px/15px "\5B8B\4F53"; text-decoration:none; text-align:center; outline:0; float:left; background:#D9D9D9; }    
+.focus .D1fBt .current,.focus .D1fBt a:hover{background:#fc114a;}    
+.focus .D1fBt img{display:none}    
+.focus .D1fBt i{display:none; font-style:normal; }    
+.focus .prev,.focus .next{position:absolute;width:40px;height:74px;background: url(../img/yingyu/focus_btn.png) no-repeat;}
+.focus .prev{top: 50%;margin-top: -37px; left: 0;background-position:0 -74px; cursor:pointer; }  
+.focus .next{top: 50%;margin-top: -37px; right: 0;  background-position:-40px -74px;  cursor:pointer;}  
+.focus .prev:hover{  background-position:0 0; }  
+.focus .next:hover{  background-position:-40px 0;}  
+
+
+
+
+.concent{ width:100%;margin:15px 0;}
+.concent .concent01{ width:1000px;margin:0 auto;}
+.concent .concent01 .concent0101{}
+.concent .concent01 .concent0101 ul{ width:326px; height:250px;overflow:hidden;float:left;margin-left:8px; border:1px solid #eee;border-bottom:3px solid #ddd; background:#fff; margin-bottom:10px;}
+.concent .concent01 .concent0101 ul h2{ background:#f5f5f5;border-top:5px solid #00a7ee; line-height:40px;padding:0px 10px;}
+.concent .concent01 .concent0101 ul h2 span{ font-size:14px; width:90px; text-align:center; color:#333;display:inline-block;}
+.concent .concent01 .concent0101 ul h2 a{float:right; color:#A5A5A5;*margin-top:-40px; padding-right:10px;
+}
+.concent .concent01 .concent0101 ul dl{padding:10px;}
+.concent .concent01 .concent0101 ul p{ line-height:23px;color:#666;}
+.concent .concent01 .concent0101 ul p a{color:#666;}
+.concent .concent01 .concent0101 ul dl{ padding:10px;}
+.concent .concent01 .concent0101 ul dl dt{ float:left;}
+.concent .concent01 .concent0101 ul dl dt h3{ line-height:30px; color:#666;font-weight: normal;}
+.concent .concent01 .concent0101 ul li{ line-height:30px; background:url(../img/yingyu/tip.png) no-repeat 10px center; padding-left:30px;border-bottom: 1px solid #eee;}
+.concent .concent01 .concent0101 ul li a{ color:#666;}
+.concent .concent01 .concent0101 ul li a:hover{ text-decoration:underline; color:#00458d;}
+
+
+.picture #demo {overflow:hidden;height:220px; margin-top:20px;}
+.picture #indemo {float: left;width: 800%;}
+.picture #demo1 {float: left;}
+.picture a{ width:180px; height:220px; display:block; float:left;margin-right: 15px;}
+.picture a h4{ line-height:30px; text-align:center;}
+.picture img{border: 1px solid #ddd;}
+.picture #demo2 {float: left;}
+.concent .concent01 .concent0102{clear: both;}
+.concent .concent01 .concent0102 ul{  height:240px;border:1px solid #eee;border-bottom:3px solid #ddd; background:#fff; margin-bottom:20px;}
+.concent .concent01 .concent0102 ul h2{background:#f5f5f5;border-top:5px solid #00a7ee; line-height:40px;padding:0px 10px; margin-bottom:10px; padding-right:10px;}
+.concent .concent01 .concent0102 ul h2 span{ font-size:14px; width:90px; text-align:center; color:#333;  display:inline-block; }
+.concent .concent01 .concent0102 ul h2 a{float:right; color:#A5A5A5;*margin-top:-40px;*padding-right:10px;}
+.concent .concent01 .concent0102 ul dl{padding:10px;}
+.concent .concent01 .concent0102 ul p{ line-height:25px; width:350px; float:left; margin-left:20px; color:#666;}
+
+
+
+.link{ width:100%;background: #009beb;clear: both;margin-top:40px;}
+.link .link01{color: #fff; width:980px; margin:0 auto; padding:10px; line-height:22px;}
+.link .link01 p a{ margin:0px 10px;color: #fff}
+.link .link01 p a:hover{ text-decoration:underline;}
+
+.footer{ width:100%; height:71px;clear: both;}
+.footer .footer01{ width:1000px; height:56px; margin:0 auto; padding-top:15px;}
+.footer .footer01 p{ width:1000px; text-align:center; line-height:22px; color:#666;} 
+.tukuzlm{ text-align:center; margin:10px 0px;}
+
+
+.concent .concent01{ width:1000px; margin:0 auto;}
+.concent .concent01 .left01{ width:210px; float:left; margin-right:20px; background:#fff; padding:10px;margin-bottom: 20px;}
+.concent .concent01 .left01 h2{ height:60px; width:200px; display:block;font-size:24px; color:#076fa6; text-align:center; border-top:3px solid #076fa6; line-height:60px;}
+.concent .concent01 .left01 li a{  display:block;color:#333; height:40px;line-height:40px; border:1px solid #dedede;width:200px;font-size: 14px;}
+.concent .concent01 .left01 li a.check{background:#009beb; color:#fff; font-weight:bold;}
+.concent .concent01 .left01 li a:hover{background:#009beb; color:#fff; font-weight:bold;}
+.concent .concent01 .left01 li{ text-align:center; height:40px; margin-bottom:10px;}
+.concent .concent01 .left01 h3{ line-height:30px; border-bottom:1px solid #00458d; background:url(../img/yingyu/tip.png) no-repeat 5px 10px; padding-left:20px; font-size:14px; color:#00458d; margin-bottom:10px;}
+.concent .concent01 .right01{ width:730px; float:left; background:#fff; padding:10px;}
+.concent .concent01 .right01 h3{width:730px; line-height:30px; border-bottom:1px solid #00458d;display:block; height:30px; font-weight:500; margin-bottom:10px;}
+.concent .concent01 .right01 h3 p{ float:right;}
+.concent .concent01 .right01 li{ line-height:40px; background:url(../img/zhongxican/tip4.jpg) no-repeat 15px 18px;border-bottom:1px dotted #dedede; padding-left:30px;}
+.concent .concent01 .right01 li span{ float:right;*margin-top:-40px;}
+.concent .concent01 .right01 li a{ color:#666;}
+.concent .concent01 .right01 li a:hover{ text-decoration:underline; color:#00458d;}
+
+
+
+.concent .concent01 .right01 ul dl{ width:700px; height:115px; padding:10px; border-bottom:1px dashed #00458d; margin-top:10px;}
+.concent .concent01 .right01 ul dl dt h4{ font-size:14px; line-height:30px;}
+.concent .concent01 .right01 ul dl dt h4 a{ color:#666;}
+.concent .concent01 .right01 ul dl dt h4 a:hover{color:#00458d; text-decoration:underline;}
+.concent .concent01 .right01 ul dl dt p{ line-height:25px; text-indent:25px;}
+.concent .concent01 .right01 ul dl dt p a{ color:#666;}
+.pagesite{margin-top: 20px;}
+
+.word{ width:100%;}
+.word .word01{overflow: hidden; width:970px; margin:0 auto;background:#fff;padding:15px;}
+.word .word01 ul{ background:#fff;}
+.word .word01 h4{ line-height:50px; text-align:center; font-size:14px; color:#00458d;}
+.word .word01 h3{ text-align:center; font-weight:500; display:block; background:#f4f4f4; line-height:40px; }
+.word .word01 p{ padding:10px 20px; line-height:25px; margin-top:10px; text-indent:25px; margin-bottom:20px;}

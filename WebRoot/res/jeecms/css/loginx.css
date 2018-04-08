@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+html,body,iframe,object,div,
+h1,h2,h3,h4,h5,h6,
+p,span,label,a,
+pre,q,
+em,strong,
+table,caption,thead,tbody,tfoot,tr,th,td,
+form,fieldset,legend,
+ul,ol,li,
+dl,dt,dd,
+img{ margin:0; padding:0; border:0; outline:none; font-size:100%;  vertical-align:baseline; }
+
+a:link, a:visited { color:#333;
+text-decoration: none;
+}
+a img{ border:none;}
+:focus{ outline:0;}
+ul,li{ list-style:none; }
+ul li.li_1{ margin-left:0px;}
+table,th,td{ vertical-align:middle;}
+table{ border-collapse:separate; border-spacing:0;}
+th,td{ font-weight:normal; text-align:left;}
+
+blockquote:after,blockquote:before,
+q:after,q:befort{ content:' '; }
+
+blockquote,q{ quotes:"""";}
+
+h1,h2,h3,h4,h5,h6{}
+h1{ font-size:2.2em;}
+h2{ font-size:1.8em;}
+h3{ font-size:1.6em;}
+h4{ font-size:1.4em;}
+h5{ font-size:1.2em;}
+h6{ font-size:1em;}
+select,input{ margin:0;}
+.clear{ clear:both;}
+
+body{ font-family:"微软雅黑"; background:#f6f7f9;}
+.logo{ width:713px; height:80px; margin:0 auto; margin-top:40px;}
+.loginbox{ width:1000px; margin:0 auto; margin-top:20px;}
+.loginpic{ float:left; width:545px;}
+.logincont{ background: url(../img/loginx/cbg.png); background-repeat:no-repeat; float:left; margin-left:20px; width:386px; height:355px; margin-top:35px;}
+.loginmain{ width:322px; margin:0 auto; margin-top:20px;}
+.loginmain p{ line-height:31px;}
+.loginmain p input{ border:1px solid #4594c1; width:320px; height:40px; line-height:40px; border-radius:8px;}
+.loginmain p input.yz{ border:1px solid #4594c1; width:200px; height:40px; line-height:40px; border-radius:8px;}
+.submitone{width:141px; margin:0 auto; margin-top:41px;}
+.submitone input{ background: url(../img/loginx/bton.jpg); background-repeat:no-repeat; color:#fff; font-size:16px; text-align:center; width:141px; height:43px; line-height:43px; border:none; cursor:pointer;}
+.num img{ margin-bottom:-16px; margin-left:8px;}
+.foot{ width:1000px; margin:0 auto; margin-top:60px; clear:both; text-align:center; font-size:12px; color:#bbb;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

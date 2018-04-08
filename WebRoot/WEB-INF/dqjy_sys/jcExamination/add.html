@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title></title>
+<#include "/dqjy_sys/head.html"/>
+<#include "questionTpl.html"/>
+<script type="text/javascript">
+$(function() {
+	$("#jvForm").validate();
+});
+</script>
+</head>
+<body>
+<div class="body-box">
+	<div class="box-positon">
+		<div class="rpos"><@s.m "global.position"/>: <@s.m "global.add"/>试题</div>
+		<form class="ropt" style="padding-top:0px">
+			<input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';"  class="submitbuton"/>
+		</form>
+		<div class="clear"></div>
+	</div>
+	<form id="jvForm" action="o_save.do" onsubmit="return formSubmit();" method="post"  class="divQuestionbox">
+		<div class="divQuestion">
+			<label>试题名称</label>
+			<input name="describe"  oninvalid="setCustomValidity('请输入试题名称。');" oninput="setCustomValidity('');" required="true" style="width:500px" maxlength="100" class="Questiontext"/>
+		</div>
+		<div class="divQuestion">
+			<label>课程名称</label>
+			<select name="channelid" id="chanelList"  oninvalid="setCustomValidity('请选择课程名称。');"  onchange="setCustomValidity('');" required="true" class="required" >
+				<option ></option>
+			</select>
+		</div>
+		<div class="divQuestion" id="question" >
+			
+		</div>
+		<div class="divQestion">
+			<input type="button" value="添加选择题" onclick="addQuestion('choiceQuestion')" class="addbuton" />
+			<input type="button" value="添加填空题" onclick="addQuestion('fillBlankQuestion')" class="addbuton"  />
+			<input type="button" value="添加判断题" onclick="addQuestion('trueFalseQuestion')" class="addbuton"  />
+			<input type="button" value="添加简答题" onclick="addQuestion('answerQuestion')"  class="addbuton" />
+		</div>
+		
+		<div class="divQestion">
+			<input type="submit" value="提交" class="submitbuton"/>
+			<input type="reset" value="重置" class="submitbuton"/>
+		</div>
+		
+		
+	</form>
+</div>
+	<script type="text/javascript">
+		var chanelList=[{id:"854",name:"计算机专业平台"}];
+		for ( var i = 0; i < chanelList.length; i++) {
+			$("#chanelList").append('<option value="'+chanelList[i].id+'">'+chanelList[i].name+'</option>');
+		}
+		var questionNumber=0;//问题编号
+		//添加问题
+		function addQuestion(type){
+			var data={i:questionNumber};
+			var html=template(type,data);
+			html=$(html).hide();
+			$("#question").append(html);
+			html.slideDown();
+			//设置输入框的焦点
+			$("textarea[name=questions["+questionNumber+"].content]").focus();
+			questionNumber++;
+			setTimeout(function(){
+				window.document.body.scrollTop = document.body.scrollHeight;
+			},350); 
+		}
+		//
+		function delQuestion(obj){
+			$(obj).parent().remove();
+		}
+		//
+		function formSubmit(){
+			var flag=false;
+			$.ajax({
+				url:"validAnswer.do",
+				type:"post",
+				data:decodeURIComponent($("#jvForm").serialize()),
+				async:false,
+				success:function(data){
+					console.log(data);
+					if (data!="") {
+						alert(data);
+						flag=false;
+					}else{
+						flag=true;
+					}
+					
+				}
+			});
+			return flag;
+		}
+	</script>
+</body>
+</html>

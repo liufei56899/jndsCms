@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>岐山县职业技术教育中心国家示范校专题网</title>
+<meta http-equiv="keywords" content="洛南精品课程"/>
+<meta http-equiv="description" content="洛南精品课程"/>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" href="/${res}/css/reset.css">
+<link rel="stylesheet" href="/${res}/css/style.css">
+<script src="/${res}/js/jquery-1.12.4.min.js"></script>
+<script src="/${res}/js/jquery.SuperSlide.2.1.1.js"></script>
+<script src="/${res}/js/jquery-often-effects.js"></script>
+<script src="/${res}/js/js.js"></script>
+<script src="/${res}/js/jquery-accordion-menu.js"></script>
+
+<script type="text/javascript">
+     var time = (new Date()).getTime();
+     function showTime() {
+         var now = new Date();
+         var year = now.getFullYear();
+         var month = now.getMonth() + 1;
+         var day = now.getDate();
+         var hours = now.getHours();
+         var minutes = now.getMinutes();
+         var seconds = now.getSeconds();
+
+         function text(add) {
+             var add = add + "";
+             return add = add.length > 1 ? add : 0 + add;
+         };
+
+         document.all.show.innerHTML = "" + year + "年" + month + "月" + day + "日 " + text(hours) + "时" + "" + text(minutes) + "分" + "" + text(seconds) + "" + "秒";
+
+
+         var timeID = setTimeout(showTime, 1000);
+     }
+ </script>
+
+</head>
+<body onload="showTime()">
+	[#include "../include/计算机专业_标志和搜索.html"/]
+    [#include "../include/计算机专业_页头导航栏.html"/]
+    
+  <div class="cont-new">
+    <div class="cont-title">
+        <!--<div class="cont-title-cont">-->
+        当前位置： <a href="/">首页</a>&nbsp;&nbsp;><span>&nbsp;&nbsp;<a href="${channel.url}">${channel.name}</a></span>
+        <!--</div>-->
+    </div>
+    <script>
+        $(function(){
+            $(".news-menu").hover(function () {
+                $(this).addClass("mover").siblings().removeClass("mover");
+            });
+            
+             jQuery(document).ready(function () {
+                jQuery("#jquery-accordion-menu").jqueryAccordionMenu();
+
+            });
+        })
+    </script>
+    <div class="news-cont">
+        <div class="news-cont-l">
+            <div class="news-img">
+            	 <span>
+	            	[@cms_channel id=channel.id]${tag_bean.name} [/@cms_channel] 
+	            </span>
+                <img src="../${res}/img/le_h.png" alt=""/>
+            </div>
+            <div id="jquery-accordion-menu" class="jquery-accordion-menu red">
+                <ul id="demo-list">
+				[@cms_channel_list parentId=channel.id] 
+						[#list tag_list as sub]
+	                 		 <li class=""><a href="${sub.url}"><i class="fa fa-home"></i>${sub.name}</a>
+	                 		 <ul class="submenu">
+	                 		 </ul>
+						[/#list]
+					[/@cms_channel_list]
+             </ul>
+            </div>
+            <div class="news-mesg">
+                <a href="#">
+                    <img src="../${res}/img/build.jpg" alt=""/>
+                </a>
+            </div>
+        </div>
+        <div class="news-cont-r">
+            <div class="ssfc-img">
+						[@cms_content_page count='20' orderBy='4' channelOption='1' channelId=channel.id ]
+								 <ul>
+								[#list tag_list as a]
+					            	 <li
+				                     	[#if (a_index+1)%4 == 0]
+											style="margin-right: 0px;"
+										[/#if]
+				                     >
+				                        <a href="${a.originUrl!''}" target="_blank">
+				                            <img src="${a.titleImg!site.defImg}" alt=""/>
+				                        </a>
+				                        <span><a href="${a.originUrl!''}" target="_blank">[@text_cut s=a.title len=10 /]</a></span>
+				                    </li>
+					            [/#list]
+					            </ul>
+								<div class="tukuzlm">
+									<div class="pagesite">[@cms_pagination sysPage='1'/]</div>
+								</div>
+							[/@cms_content_page]
+
+            </div>
+        </div>
+    </div>
+
+</div>
+    
+
+
+
+
+    [#include "../include/计算机专业_页脚信息栏.html"/]
+</body>
+</html>

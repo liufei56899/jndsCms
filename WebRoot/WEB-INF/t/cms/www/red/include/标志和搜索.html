@@ -1,0 +1,19 @@
+<script type="text/javascript" src="/${res}/js/writetime.js"></script>
+<div class="header">
+       <div class="header01">
+          <div class="header0101">
+             <img src="/${res}/img/logo.jpg" width="527" height="82"/>
+          </div>
+          <div class="header0102">
+            <p><span class="time"><script language="javascript">document.write(""+showdate()+" "+showweek())</script></span>
+            <a onclick="SetHome(window.location)" href="javascript:void(0)" style="CURSOR: hand">设为首页</a>|
+			<a href="javascript:window.external.AddFavorite('${site.name}','www.sxzcjyw.com')">加入收藏</a> 
+            </p>
+            <form action="${base}/search.jspx" target="_blank">
+        		<input name="q" class="text" value="${q!'请输入关键词'}" type="text" id="txtKey" onfocus="if(this.value=='请输入关键词')this.value=''" onblur="if(this.value=='')this.value='请输入关键词'" maxlength="50" autocomplete="off">
+        		<input type="submit" class="button" value="搜索"/ >
+			</form>
+          </div>
+       </div>
+    </div>
+<div class="clear"></div>

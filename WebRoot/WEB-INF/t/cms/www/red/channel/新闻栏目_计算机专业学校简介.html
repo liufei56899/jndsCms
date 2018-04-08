@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>岐山县职业技术教育中心国家示范校专题网</title>
+<meta http-equiv="keywords" content="洛南精品课程"/>
+<meta http-equiv="description" content="洛南精品课程"/>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" href="/${res}/css/reset.css">
+<link rel="stylesheet" href="/${res}/css/style.css">
+<script src="/${res}/js/jquery-1.12.4.min.js"></script>
+<script src="/${res}/js/jquery.SuperSlide.2.1.1.js"></script>
+<script src="/${res}/js/jquery-often-effects.js"></script>
+<script src="/${res}/js/jquery-accordion-menu.js"></script>
+<script src="/${res}/js/js.js"></script>
+
+
+<script type="text/javascript">
+     var time = (new Date()).getTime();
+     function showTime() {
+         var now = new Date();
+         var year = now.getFullYear();
+         var month = now.getMonth() + 1;
+         var day = now.getDate();
+         var hours = now.getHours();
+         var minutes = now.getMinutes();
+         var seconds = now.getSeconds();
+
+         function text(add) {
+             var add = add + "";
+             return add = add.length > 1 ? add : 0 + add;
+         };
+
+         document.all.show.innerHTML = "" + year + "年" + month + "月" + day + "日 " + text(hours) + "时" + "" + text(minutes) + "分" + "" + text(seconds) + "" + "秒";
+         var timeID = setTimeout(showTime, 1000);
+     }
+ </script>
+
+</head>
+<body onload="showTime()">
+	[#include "../include/计算机专业_标志和搜索.html"/]
+    [#include "../include/计算机专业_页头导航栏.html"/]
+    
+  <div class="cont-new">
+    <div class="new-title">
+        当前位置： <a href="/">首页</a>&nbsp;&nbsp;><span>&nbsp;&nbsp;
+        [#list channel.nodeList as n]
+        	[#if n.id!=271]
+        		[#if n.id!=892]
+        			<a href="${n.url}">${n.name}</a>
+				            [#if n_has_next] 
+				            	> 
+				            [/#if]
+        		[/#if]
+           [/#if]
+        [/#list]
+        
+        <!-- 重点专业 -->
+        [#if channel.id =272]
+        	[@cms_channel id='282']
+				> <a href="${tag_bean.url}">${tag_bean.name}</a>
+			[/@cms_channel]
+		
+		[#elseif channel.id =297]	
+			[@cms_channel id='890']
+				> <a href="${tag_bean.url}">${tag_bean.name}</a>
+			[/@cms_channel]
+		
+		[#elseif channel.id =872]
+			[@cms_channel id='901']
+				> <a href="${tag_bean.url}">${tag_bean.name}</a>
+			[/@cms_channel]
+        [/#if]
+        
+        </span>
+        <!--</div>-->
+    </div>
+    
+     <div class="news-details">
+        [#if channel.id = 275]
+	        [@cms_content_list count='1' orderBy='4' channelOption='1' channelId=275 ]
+	        	[#list tag_list as sub]
+			        <div class="news-details-title">
+			            <h2>${sub.title}</h2>
+			            <p style="color:red;text-align: center;font-weight: bold;">[@text_cut s=sub.shortTitle  /]</p>
+			             <br/>
+			            <h3>发布时间：${sub.releaseDate?string('yyyy-MM-dd')}&nbsp; 作者：${sub.author!'本站编辑'} &nbsp; 来源： ${sub.origin!'本站原创'}</h3>
+			        </div>
+			        <div class="news-details-cont">
+			        	<p>[@html_cut s=sub.txt/]</p>
+						[#if sub.attachments?size gt 0]
+			       			[#list 0..sub.attachments?size-1 as a]
+			       					<p style="text-indent: 0px;padding: 0px;color: #666">
+			       					<img src="../${res}/img/fjico.png" width="20" height="23" style="margin-bottom: -8px;"/>
+			       					<a id="attach${a_index}">附件:${sub.attachments[a].name}</a>
+			       					</p>
+			      			[/#list]
+			   		   	[/#if]
+			        </div>
+	         [/#list]
+	     [/@cms_content_list]
+     [/#if]
+     </div>
+    
+</div>
+
+    [#include "../include/计算机专业_页脚信息栏.html"/]
+</body>
+</html>

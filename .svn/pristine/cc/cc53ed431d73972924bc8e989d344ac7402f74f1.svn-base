@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>技能大赛</title>
+    <link rel="stylesheet" href="/${res}/css/reset.css">
+    <link rel="stylesheet" href="/${res}/css/main.css">
+    <link rel="stylesheet" href="/${res}/css/style.css">
+    <script type="text/javascript">
+
+    </script>
+    <script src="/${res}/js/jquery-2.1.0.min.js"></script>
+    <script src="/${res}/js/jquery-often-effects.js"></script>
+    
+    
+</head>
+
+<body>
+<!--top-->
+[#include "../include/计算机专业_标志和搜索.html"/]
+<!--head-->
+[#include "../include/计算机专业_页头导航栏.html"/]
+
+<!--头条新闻-->
+[@cms_content_list count='1' orderBy='4' channelId='894'  channelOption='2']
+	[#list tag_list as a]
+		
+			<div class="headlines">
+			    <h1 class="head-title">
+			   <a href="${a.url!''}" target="_blank">
+			        	[@text_cut s=a.title len=31 /]
+			        	</a> 
+			    </h1>
+			</div>
+		
+	
+	[/#list]
+[/@cms_content_list]
+
+<!--校园新闻-->
+<div class="i_news">
+    <div class="new_left fl">
+        <div class="FocusImg" id="banner2">
+            <span class="Btn BtnLeft" role="left" style="display: none;"></span>
+            <span class="Btn BtnRight" role="right" style="display: none;"></span>
+            <div class="FocusPic" role="viewport">
+                <ul role="content">
+
+					[@cms_content_list count='4' orderBy='4' channelId='893'  channelOption='2']
+            				[#list tag_list as a]
+            					<li>
+			                        <a title="${a.title}" href="${a.url!''}" target="_blank"><img width="515"
+                                        height="310"
+                                        alt=""
+                                        src="${a.titleImg!site.defImg}"></a>
+			                        <p class="white Text">[@text_cut s=a.title len=13 /][#if a.title?length>13]...[/#if]</p>
+			                    </li>
+            				[/#list]
+					[/@cms_content_list]
+                </ul>
+            </div>
+            <div class="FocusNum1">
+                <div class="focusWidth" role="points">
+                    [@cms_content_list count='4' orderBy='4' channelId='893'  channelOption='2']
+			            [#list tag_list as a]
+				            [#if a_index==0]
+				            <a href="javascript:;"  class="FocusCur1"></a>
+				            [/#if]
+				            [#if a_index!=0]
+				            <a class="" href="javascript:;"></a>
+				            [/#if]
+			         	[/#list]
+					[/@cms_content_list]
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="new_right fr">
+        <div class="zr_r_title ">
+            <ul id="tab" style="padding-left: 10px;background: url(../${res}/img/ico_001.png) no-repeat left center;height: 50px">
+                <li class="zr_r_on"><!-- 赛事新闻 -->
+                	[@cms_channel id='867']<a href="${tag_bean.url}">${tag_bean.name}</a>[/@cms_channel]
+                </li>
+                <li class=""><!-- 媒体聚焦 -->
+                	[@cms_channel id='868']<a href="${tag_bean.url}">${tag_bean.name}</a>[/@cms_channel]
+                    <div class="clear"></div>
+                </li>
+            </ul>
+        </div>
+        <div id="zr_r_content">
+            <ul class="zr_r_content" style="display: block;">
+            	  [@cms_content_list count='7'  orderBy='4' channelOption='2' channelId='867']
+					[#list tag_list as a]
+	                    <li>
+		                    <h2 class="zr_r_h2 overflow">
+		                        <a title="${a.title}" href="${a.url!''}" target="_blank">
+		                        	[@text_cut s=a.title len=26 /][#if a.title?length>26]...[/#if]</a>
+		                    </h2>
+		                    <span class="zr_r_date">[${a.releaseDate?string('MM-dd')}]</span>
+		                </li>
+					[/#list]
+				[/@cms_content_list]          
+            </ul>
+            <!--#endeditable--><!--#begineditable viewid="6364" name="通知公告-标题列表"-->
+            <ul class="zr_r_content" style="display: none;">
+            	
+            	[@cms_content_list count='7'  orderBy='4' channelOption='2' channelId='868']
+					[#list tag_list as a]
+	                    <li>
+		                    <h2 class="zr_r_h2 overflow">
+		                        <a title="${a.title}" href="${a.url!''}" target="_blank">
+		                        	[@text_cut s=a.title len=26 /][#if a.title?length>26]...[/#if]</a>
+		                    </h2>
+		                    <span class="zr_r_date">[${a.releaseDate?string('MM-dd')}]</span>
+		                </li>
+					[/#list]
+				[/@cms_content_list]
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+<!--sign-->
+<div class="sign">
+    <div class="pull-left way">
+    	 [@cms_channel id='923']
+    		<a href="${tag_bean.url}">
+    			<img src="../${res}/img/way.jpg" alt="">
+    		</a>
+    	[/@cms_channel]
+    </div>
+    <div class="pull-right bao"><a href="http://180.76.150.163:9014/reception/dl.jsp"  target="_blank">
+    <img src="../${res}/img/bao.jpg" alt=""></a>
+    </div>
+</div>
+<!--大赛文件   赛项规程-->
+<div class="news-mn">
+    <div class="news-match pull-left">
+        <div class="news-match-title">
+            [@cms_channel id='872']<!-- 	大赛文件-->
+             	 <a href="${tag_bean.url}" >${tag_bean.name}</a>
+            [/@cms_channel]
+            
+            <ul class="tab" id="tabHead">
+                <li class="tapActiveLi"><!-- 	大赛通知 -->
+                    [@cms_channel id='901']
+			             <a href="${tag_bean.url}" >${tag_bean.name}</a>
+		            [/@cms_channel]
+                </li>
+                <li class="">
+                   	<!-- 省赛文件 -->
+                   	[@cms_channel id='902']
+			             <a href="${tag_bean.url}" >${tag_bean.name}</a>
+		            [/@cms_channel]
+                </li>
+                <li class="">
+                                                    <!-- 国赛文件 -->
+                    [@cms_channel id='905']
+			             <a href="${tag_bean.url}" >${tag_bean.name}</a>
+		            [/@cms_channel]
+                </li>
+            </ul>
+        </div>
+        <div class="news-match-cont" id="wrap">
+            <ul>
+                [@cms_content_list count='5'  orderBy='2' channelOption='0' channelId='901']
+		           [#list tag_list as a]
+		              	<li>
+		              		<a href="${a.url!''}" target="_blank">
+		              		[@text_cut s=a.title len=30 /][#if a.title?length>30]...[/#if]
+		              		</a>
+		              		<span class="time pull-right">[${a.releaseDate?string('MM-dd')}]</span>
+                		</li>
+		           [/#list]
+		       [/@cms_content_list]
+               
+            </ul>
+            
+            <ul class="hide">
+                [@cms_content_list count='5'  orderBy='2' channelOption='0' channelId='902']
+		           [#list tag_list as a]
+		              	<li>
+		              		<a href="${a.url!''}" target="_blank">
+		              			[@text_cut s=a.title len=18 /][#if a.title?length>18]...[/#if]
+		              		</a>
+		              		<span class="time pull-right">[${a.releaseDate?string('MM-dd')}]</span>
+                		</li>
+		           [/#list]
+		       [/@cms_content_list]
+                
+            </ul>
+            <ul class="hide">
+                 [@cms_content_list count='5'  orderBy='2' channelOption='0' channelId='905']
+		           [#list tag_list as a]
+		              	<li>
+		              		<a href="${a.url!''}" target="_blank">
+		              			[@text_cut s=a.title len=18 /][#if a.title?length>18]...[/#if]
+		              		</a>
+		              		<span class="time pull-right">[${a.releaseDate?string('MM-dd')}]</span>
+                		</li>
+		           [/#list]
+		       [/@cms_content_list]
+                
+            </ul>
+        </div>
+    </div>
+    <div class="news-notice pull-right">
+        <div class="news-notice-title">
+            [@cms_channel id='906']<!-- 	赛项规程-->
+             	 <a href="${tag_bean.url}" >${tag_bean.name}</a>
+            [/@cms_channel]
+            <ul class="tab" id="tabHead1">
+                <li class="tapActiveLi">
+                    <!-- 省赛规程 -->
+                   	[@cms_channel id='907']
+			             <a href="${tag_bean.url}" >${tag_bean.name}</a>
+		            [/@cms_channel]
+                </li>
+                <li class="">
+                    <!-- 国赛规程-->
+                   	[@cms_channel id='908']
+			             <a href="${tag_bean.url}" >${tag_bean.name}</a>
+		            [/@cms_channel]
+                </li>
+            </ul>
+        </div>
+        <div class="news-notice-cont" id="wrap1">
+            <ul>
+                 [@cms_content_list count='5'  orderBy='2' channelOption='0' channelId='907']
+		           [#list tag_list as a]
+		              	<li>
+		              		<a href="${a.url!''}" target="_blank">
+		              			[@text_cut s=a.title len=18 /][#if a.title?length>18]...[/#if]
+		              		</a>
+		              		<span class="time pull-right">[${a.releaseDate?string('MM-dd')}]</span>
+                		</li>
+		           [/#list]
+		       [/@cms_content_list]
+                
+                
+            </ul>
+            <ul class="hide">
+                [@cms_content_list count='5'  orderBy='2' channelOption='0' channelId='908']
+		           [#list tag_list as a]
+		              	<li>
+		              		<a href="${a.url!''}" target="_blank">
+		              			[@text_cut s=a.title len=18 /][#if a.title?length>18]...[/#if]
+		              		</a>
+		              		<span class="time pull-right">[${a.releaseDate?string('MM-dd')}]</span>
+                		</li>
+		           [/#list]
+		       [/@cms_content_list]
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="contest">
+    <div class="win-contest-documents jsxm pull-left">
+        <div class="win-contest-documents-title">
+             [@cms_channel id='909']<!-- 竞赛项目-->
+             	 <a href="${tag_bean.url}" class="jsxm" >${tag_bean.name}</a>
+            [/@cms_channel]
+            <ul class="win-tab pull-right" id="tabHead2">
+                <li class="tapActiveLi">
+                  <!-- 中职组-->
+                   	[@cms_channel id='910']
+			             <a href="${tag_bean.url}" >${tag_bean.name}</a>
+		            [/@cms_channel]
+                </li>
+                <li>
+                    <!-- 高职组-->
+                   	[@cms_channel id='911']
+			             <a href="${tag_bean.url}">${tag_bean.name}</a>
+		            [/@cms_channel]
+                </li>
+            </ul>
+        </div>
+        <div class="win-contest-img-cont" id="wrap2">
+            <ul class="contest-img-cont-b marquee">
+               [@cms_content_list count='4'  orderBy='4' channelOption='1' channelId='910']
+		           [#list tag_list as a]
+		              	<li>
+			              	<a title="${a.title}" href="${a.url!''}"  target="_blank">
+		                        <img src="${a.titleImg!site.defImg}" alt="">
+		                        <span class="img-title pull-right">
+		                        		[@text_cut s=a.title len=10 /]
+		                        </span>
+		                    </a>
+                		</li>
+		           [/#list]
+		     [/@cms_content_list]
+            </ul>
+            <ul class="contest-img-cont-b hide marquee">
+                [@cms_content_list count='4'  orderBy='4' channelOption='1' channelId='911']
+		           [#list tag_list as a]
+		              	<li>
+			              	<a title="${a.title}" href="${a.url!''}"  target="_blank">
+		                        <img src="${a.titleImg!site.defImg}" alt="">
+		                        <span class="img-title pull-right">
+		                        		[@text_cut s=a.title len=10 /]
+		                        </span>
+		                    </a>
+                		</li>
+		           [/#list]
+		     [/@cms_content_list]
+            </ul>
+
+        </div>
+
+    </div>
+    <div class="contest-documents sdyx pull-right">
+        <div class="contest-documents-title">
+            <ul class="sd-ul" id="tabHead3">
+                <li class="tapActiveLi">
+                	 <!-- 赛点院校-->
+                   	[@cms_channel id='916']
+			             <a href="${tag_bean.url}">${tag_bean.name}</a>
+		            [/@cms_channel]
+                </li>
+                <li>
+                 	<!-- 合作企业-->
+                   	[@cms_channel id='917']
+			             <a href="${tag_bean.url}" >${tag_bean.name}</a>
+		            [/@cms_channel]
+                </li>
+            </ul>
+
+            <!-- <span class="more pull-right">
+                    <a href="javascript:">more</a>
+            </span> -->
+        </div>
+        <div class="contest-documents-cont" id="wrap3">
+            <ul class="contest-documents-cont-b">
+               [@cms_content_list count='8'  orderBy='2' channelOption='0' channelId='916']
+		           [#list tag_list as a]
+		              	<li>
+		              		<a title="${a.title}" href="${a.url!''}" target="_blank">
+		              			[@text_cut s=a.title len=16 /][#if a.title?length>16]...[/#if]
+		              		</a>
+		              		<span class="time pull-right">[${a.releaseDate?string('MM-dd')}]</span>
+                		</li>
+		           [/#list]
+		       [/@cms_content_list]
+            </ul>
+            <ul class="contest-documents-cont-b hide">
+                [@cms_content_list count='8'  orderBy='2' channelOption='0' channelId='917']
+		           [#list tag_list as a]
+		              	<li>
+		              		<a title="${a.title}" href="${a.url!''}" target="_blank">
+		              			[@text_cut s=a.title len=16 /][#if a.title?length>16]...[/#if]
+		              		</a>
+		              		<span class="time pull-right">[${a.releaseDate?string('MM-dd')}]</span>
+                		</li>
+		           [/#list]
+		       [/@cms_content_list]
+            </ul>
+        </div>
+
+    </div>
+    <div class="contest-documents dszy">
+        <div class="contest-documents-title">
+            <!-- 大赛资源-->
+            [@cms_channel id='912']
+            	 <a href="${tag_bean.url}" >${tag_bean.name}</a>
+            [/@cms_channel]
+            <ul class="win-tab pull-right" id="tabHead4">
+                <li class="tapActiveLi">
+                   <!-- 大赛试题 -->
+                  [@cms_channel id='913']
+	            	 <a href="${tag_bean.url}" >${tag_bean.name}</a>
+	              [/@cms_channel]                         
+                </li>
+                <li>
+                    <!-- 大赛教程 -->
+                  [@cms_channel id='914']
+	            	 <a href="${tag_bean.url}" >${tag_bean.name}</a>
+	              [/@cms_channel]  
+                
+                </li>
+            </ul>
+        </div>
+        <div class="contest-documents-cont" id="wrap4">
+            <ul class="contest-documents-cont-b">
+                [@cms_content_list count='3'  orderBy='2' channelOption='0' channelId='913']
+		           [#list tag_list as a]
+		              	<li>
+		              		<a title="${a.title}" href="${a.url!''}" target="_blank">
+		              			[@text_cut s=a.title len=18 /][#if a.title?length>18]...[/#if]
+		              		</a>
+		              		<span class="time pull-right">[${a.releaseDate?string('MM-dd')}]</span>
+                		</li>
+		           [/#list]
+		       [/@cms_content_list]
+
+            </ul>
+            <ul class="contest-documents-cont-b hide">
+                 [@cms_content_list count='3'  orderBy='2' channelOption='0' channelId='914']
+		           [#list tag_list as a]
+		              	<li>
+		              		<a title="${a.title}" href="${a.url!''}" target="_blank">
+		              			[@text_cut s=a.title len=18 /][#if a.title?length>18]...[/#if]
+		              		</a>
+		              		<span class="time pull-right">[${a.releaseDate?string('MM-dd')}]</span>
+                		</li>
+		           [/#list]
+		       [/@cms_content_list]
+
+            </ul>
+        </div>
+
+    </div>
+    <div class="contest-documents ssqc">
+        <div class="contest-documents-title">
+			 <!-- 赛事器材 -->
+                  [@cms_channel id='915']
+	            	  <a href="${tag_bean.url}" >${tag_bean.name}</a>
+	              [/@cms_channel]  
+        </div>
+        <div class="contest-documents-cont">
+            <ul class="contest-documents-cont-b" style="display: block;">
+                [@cms_content_list count='3'  orderBy='2' channelOption='0' channelId='915']
+		           [#list tag_list as a]
+		              	<li>
+		              		<a title="${a.title}" href="${a.url!''}" target="_blank">
+		              			[@text_cut s=a.title len=16 /][#if a.title?length>16]...[/#if]
+		              		</a>
+		              		<span class="time pull-right">[${a.releaseDate?string('MM-dd')}]</span>
+                		</li>
+		           [/#list]
+		       [/@cms_content_list]
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+<!--获奖名单-->
+
+<div class="contest">
+    <div class="contest-documents pull-left">
+        <div class="contest-documents-title">
+            <!--  获奖名单 -->
+                  [@cms_channel id='918']
+	            	  <a href="${tag_bean.url}">${tag_bean.name}</a>
+	              [/@cms_channel]  
+        </div>
+        <div class="contest-documents-cont">
+            <ul class="contest-documents-cont-b" style="display: block;">
+                [@cms_content_list count='5'  orderBy='2' channelOption='0' channelId='918']
+		           [#list tag_list as a]
+		              	<li>
+		              		<a title="${a.title}" href="${a.url!''}" target="_blank">
+		              			[@text_cut s=a.title len=16 /][#if a.title?length>16]...[/#if]
+		              		</a>
+		              		<span class="time pull-right">[${a.releaseDate?string('MM-dd')}]</span>
+                		</li>
+		           [/#list]
+		       [/@cms_content_list]
+            </ul>
+        </div>
+
+    </div>
+    <div class="win-contest-documents pull-left">
+        <div class="win-contest-documents-title">
+            <ul class="sd-ul hj_m" id="tabHead5">
+                <li class="tapActiveLi">
+                <!-- 获奖选手  -->   
+                    [@cms_channel id='919']
+	                    <a href="${tag_bean.url}">${tag_bean.name}</a>
+	               [/@cms_channel]  
+
+                </li>
+                <li>
+                    <!-- 获奖团队 -->   
+                    [@cms_channel id='920']
+	                    <a href="${tag_bean.url}" >${tag_bean.name}</a>
+	               [/@cms_channel]  
+                </li>
+                <span class="more pull-right">
+                	[@cms_channel id='919']
+                    	<a href="${tag_bean.url}" class="okmemo-tmp-unselect">>>More</a>
+                    [/@cms_channel]  
+                </span>
+                <span class="more pull-right" style="display:none;">
+                   [@cms_channel id='920'] 
+                   	<a href="${tag_bean.url}" class="okmemo-tmp-unselect">>>More</a> 
+                   [/@cms_channel]  
+                </span>
+            </ul>
+        </div>
+        <div class="win-contest-img-cont winner hjtd" id="wrap5">
+            <ul class="contest-img-cont-b marquee ">
+            [@cms_content_list count='4'  orderBy='4' channelOption='1' channelId='919']
+		           [#list tag_list as a]
+		              	<li>
+			              	<a title="${a.title}" href="${a.url!''}"  target="_blank">
+		                        <img src="${a.titleImg!site.defImg}" alt="">
+		                        <span class="img-title pull-right">
+		                        		[@text_cut s=a.title len=10 /]
+		                        </span>
+		                    </a>
+                		</li>
+		           [/#list]
+		     [/@cms_content_list]
+            
+        </ul>
+            <ul class="contest-img-cont-b hide marquee">
+                [@cms_content_list count='4'  orderBy='4' channelOption='1' channelId='920']
+		           [#list tag_list as a]
+		              	<li>
+			              	<a title="${a.title}" href="${a.url!''}"  target="_blank">
+		                        <img src="${a.titleImg!site.defImg}" alt="">
+		                        <span class="img-title pull-right">
+		                        		[@text_cut s=a.title len=10 /]
+		                        </span>
+		                    </a>
+                		</li>
+		           [/#list]
+		     [/@cms_content_list]
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+<div class="link">
+    <div class="link-title">
+        <!-- 友情链接 -->   
+        [@cms_channel id='921']${tag_bean.name}
+             <!-- <a href="${tag_bean.url}" target="_blank">${tag_bean.name}</a> -->
+        [/@cms_channel] 
+    </div>
+    <div class="link-cont">
+        <ul>
+            [@cms_content_list count='5'  orderBy='2' channelOption='0' channelId='918']
+		           [#list tag_list as a]
+                		<li>
+                			<a title="${a.title}" href="${a.url!''}" target="_blank">
+                				[@text_cut s=a.title len=10 /]
+                			</a>
+                		</li>
+		           [/#list]
+		       [/@cms_content_list]
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+	<!--footer-->
+  [#include "../include/计算机专业_页脚信息栏.html"/]
+</body>
+<script src="/${res}/js/js.js"></script>
+</html>

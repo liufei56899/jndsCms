@@ -1,0 +1,188 @@
+@charset "utf-8";
+/* CSS Document */
+html,body,iframe,object,div,
+h1,h2,h3,h4,h5,h6,
+p,span,label,a,
+pre,q,
+em,strong,
+table,caption,thead,tbody,tfoot,tr,th,td,
+form,fieldset,legend,
+ul,ol,li,
+dl,dt,dd,
+img{ margin:0; padding:0; border:0; outline:none; font-size:100%;  vertical-align:baseline; }
+
+a:link, a:visited {color:#333;
+text-decoration: none;
+}
+a img{ border:none;}
+:focus{ outline:0;}
+ul,li{ list-style:none; }
+
+table,th,td{ vertical-align:middle;}
+table{ border-collapse:separate; border-spacing:0;}
+th,td{ font-weight:normal; height:35px;}
+
+blockquote:after,blockquote:before,
+q:after,q:befort{ content:' '; }
+
+blockquote,q{ quotes:"""";}
+
+h1,h2,h3,h4,h5,h6{}
+h1{ font-size:2.2em;}
+h2{ font-size:1.3em;}
+h3{ font-size:1.6em;}
+h4{ font-size:1.4em;}
+h5{ font-size:1.2em;}
+h6{ font-size:1em;}
+select,input{ margin:0;}
+.clear{ clear:both;}
+.container .mr{ margin-left:0px;}
+
+/*************index.html*****************************/
+body{ font-family: "微软雅黑"}
+.top{ background:url(../img/indeximg/topbg.jpg);height:73px; }
+.topbox{width:1000px; margin:0 auto; height:73px;}
+.logo{ float:left; width:370px; height:73px; margin-top:0px;}
+.top_r{ float:right; background:url(../img/indeximg/sc.png); width:190px; height:27px;color:#fff; font-size:12px; line-height:27px;  margin-top:26px; text-align:center;}
+.top_r a{color:#fff; font-size:12px;} 
+.top_r a:hover{ text-decoration:underline;}
+.menu{ width:100%; height:39px;background:#12a2eb;  clear:both;}
+.menulist{width:1000px; margin:0 auto; height:39px; clear:both; }
+.menulist li{ float:left; height:39px; line-height:39px; width:110px; text-align:center;}
+.menulist li a{ font-size:14px; color:#fff;}
+.menulist li a:visited{ color:#fff;}
+.menulist li a:hover{ color:#fff;}
+.menulist li ul{ position:absolute; width:90px; background:#12a2eb; filter:alpha(opacity=90); opacity:.9; -moz-opacity:.9; -moz-opacity:.9; display:none;_margin-left:-80px; _margin-top:28px; *+margin-left:-80px; *+margin-top:28px; z-index:999;}
+.menulist li ul li { background:none; float:left; border-bottom:1px #fff solid; display:block; width:90px; text-align:center; height:25px; overflow:hidden;}
+.menulist li ul li a{ float:none; color:#fff;display: block; font-size:12px; line-height:25px; height:25px; width:90px; text-align:center; font-weight:normal;}
+.menulist li ul li a:hover{ background:#0083c5; font-size:12px; font-weight:normal; color:#fff;}
+
+.containerbox{background:url(../img/indeximg/cbg.png);background-repeat: repeat-x;width: 100%;padding-top:10px;}
+.container{ width:1000px; margin:10px auto;}
+.contentbox{ width:326px; height:274px; overflow:hidden; float:left; margin-left:8px; background:#fff; border:1px solid #ddd; margin-bottom:8px;}
+.titlebox{ background:#12a2eb; background-position:left center; background-repeat:no-repeat; width:100%; height:40px; line-height:40px; margin-bottom:7px;}
+.titlebox span{ color:#fff; font-size:15px; float:left; margin-left:12px;}
+.more{ float:right; font-size:13px; color:#fff!important; margin-right:8px;}
+.more:hover{ text-decoration:underline;}
+.listbox{ margin:6px;}
+.listbox li{ height:30px; line-height:30px; border-bottom:1px dashed #ccc;background:url(../img/indeximg/ico1.gif); padding-left:15px; background-position:left center; background-repeat:no-repeat;}
+.listbox li a{ font-size:13px; color:#333;}
+.listbox li a:hover{ color:#12a2eb;}
+.hxbox{background:url(../img/indeximg/hxbg.png); width:316px; height:234px;}
+.hxlist{ margin:10px;}
+.hxlist li{ float:left; width:110px; height:110px; margin-left:15px; text-align:center;}
+.hxname{ height:26px; line-height:26px;overflow: hidden;}
+.hxname a{ color:#573814; font-size:12px;}
+.hxname a:hover{ color:#fff;}
+.jxbox{}
+.jxlist{ width:297px; margin:0 auto; margin:10px;}
+.jxlist li{ height:70px; border-bottom:1px dashed #ccc; margin-bottom:6px;}
+.jximg{ float:left;margin-left:5px;}
+.jxcg{ float:left; width:160px; margin-left:15px;}
+.jxtitle{ margin-top:10px;line-height:23px;}
+.jxtitle a{ color:#333; font-size:13px;}
+.jxtitle a:hover{ color:#12a2eb;}
+.jxmain{ font-size:11px; color:#b6966a; line-height:18px; margin-top:5px;}
+.sxbox{ margin:8px;}
+.sxbox_l{ float:left; width:200px; margin-top:5px;}
+.sxbox_r{ float:left; margin-left:1px;margin-top:5px;}
+.sxbox img{ border:1px solid #ccc;filter: alpha(opacity=80); opacity: 0.8;}
+.sxbox img:hover{filter: alpha(opacity=100); opacity:1;}
+.sximg img{ float:left; margin-top:1px;}
+.sxbox a{ display:block; position:relative;}
+.sximg_1,.sximg_2{display:block; position:relative;height:69px;width:98px;float:left;}
+.sximg_2{ margin-left:2px;}
+.num{ display:block; position:absolute; width:15px; height:15px; background:url(../img/indeximg/numbg.png); background-repeat:repeat; font-size:11px; color:#573814; bottom:1px; right:1px; text-align: center}
+
+.jxzyboox{ width:662px; height:242px; overflow:hidden; float:left; background:#fff; border:1px solid #ddd;}
+.jxzylist{}
+.jxzylist li{ width:204px; height:182px; background:#fff; border:1px solid #ccc; float:left; margin-left:8px; margin-top:3px}
+.jxzylist li img{ margin-top:5px;}
+.zycont{ margin-top:5px;}
+.zycont p{ height:24px; line-height:24px; border-bottom:1px solid #ccc;}
+.zycont p span{ margin-left:8px;}
+.zycont a{ font-size:12px; color:#333;}
+.zycont a:hover{ color:#12a2eb;}
+
+.szbox{ width:326px; height:242px; overflow:hidden; float:left;margin-left:8px; background:#fff; border:1px solid #ddd; }
+.szdw{ width:315px; margin:0px auto 0 auto; height:200px; position:relative;z-index:99; overflow:hidden; margin-top:12px;}
+.szList li{ float:left; background:#fff; border:1px solid #ccc; width:132px; height:170px; padding:2px;}
+.szList li img{ border:solid 1px #ccc; display:block;}
+.szdw .bx_container{ width:280px!important; height:240px; float:left;}
+.szdw .prev{ float:left;padding:55px 5px 0 0;}
+.szdw a:focus{outline:none;-moz-outline:none; }
+.szdw .next{ float:right;padding:55px 0 0 0;}
+.szname{ height:22px; line-height:22px; text-align:center; margin-top:6px;overflow: hidden;}
+.szname a{ font-size:13px; color:#333;}
+.szname a:hover{ color:#12a2eb;}
+
+.foot{ clear:both; width:100%; min-height:50px;padding-bottom:10px; text-align:center; margin-top:40px; padding-top:22px;}
+.foot p{ font-size:12px; color:#666; line-height:21px;}
+
+
+/*************textlist.html*****************************/
+.concent{ width:1000px;margin:0 auto;}
+.concent .left{ width:220px; float:left; margin-right:10px; background:#fff; padding:10px;padding-top: 0;}
+.concent .left h2{ height:40px; line-height:40px;display:block; font-size:25px;font-weight:600; color:#12a2eb;margin-bottom: 5px;}
+.concent .left li a{ background:#12a2eb; display:block; border-radius:10px;color: #fff; font-size:15px; height:35px;line-height:35px;}
+.concent .left li a:hover{ background:#0083c5; color:#fff;}
+.concent .left li a.check{background:#0083c5; color:#fff;}
+.concent .left li{  text-align:center; height:40px; margin-bottom:5px;}
+.concent .left h3{ line-height:30px; border-top:1px solid #723500; background:url(../img/indeximg/tip.jpg) no-repeat 10px; padding-left:30px; font-size:14px; color:#854f00; margin-bottom:10px;}
+.concent .right{ width:725px; float:left; background:#fff; padding:10px; font-size:14px; color:#666;;}
+.concent .right h3{line-height:30px; border-left:5px solid #12a2eb;padding-left:10px; border-bottom:1px solid #12a2eb;display:block; height:30px; font-weight:500; margin-bottom:10px;}
+.concent .right h3 p{font-size:12px;}
+.concent .right li{ line-height:40px; background:url(../img/indeximg/ico1.gif) no-repeat left center;border-bottom:1px dashed #ddd; padding-left:20px;}
+.concent .right li span{ float:right;*margin-top:-40px;}
+.concent .right li a,.concent .right h3 p a{ color:#333;}
+.concent .right li a:hover{color:#12a2eb;}
+.concent .right ul dl{ width:670px; height:105px; padding:10px; border-bottom:1px dashed #723500; margin-top:10px;}
+.concent .right ul dl dt h4{ font-size:14px; line-height:30px;}
+.concent .right ul dl dt h4 a{color:#854f00;}
+.concent .right ul dl dt h4 a:hover{ text-decoration:underline;}
+.concent .right ul dl dt p{ line-height:25px; text-indent:25px;}
+.page {text-align: center;margin: 10px 0px;}
+.sxjdimg{ width:210px; margin:0 auto;margin-top: 15px;}
+.sxjdimg{ position:relative;}
+.sxjd{ display:block; position:absolute; padding:5px; background:url(../img/indeximg/numbg.png); background-repeat:repeat; font-size:11px; color:#573814; bottom:0px; right:0px; text-align: center}
+
+.detail h4{ line-height:20px; text-align:center; font-size:14px; color:#888;}
+.detail h3{ text-align:center;display:block;line-height:30px; border:none!important; }
+.detail p{ padding:0px 20px; line-height:25px; margin-top:10px; text-indent:25px; margin-bottom:20px;}
+
+
+.sxbox{ position:relative; height:218px;}
+.sx1{ position:absolute; top:6px; left:0px;}
+.sx2{ position:absolute; top:6px; right:0px;}
+.sx3{position:absolute; bottom:5px; left:0px;}
+.sx4{position:absolute; bottom:5px; right:105px;}
+.sx5{position:absolute; bottom:5px; right:0px;}
+.sx1 img{ width:150px;height:115px}
+.sx2 img{ width:150px;height:115px}
+.sx3 img{ width:97px;height:80px}
+.sx4 img{ width:97px;height:80px}
+.sx5 img{ width:97px;height:80px}
+.link{background:#12a2eb;width:100%;margin-top:-35px; margin-bottom:10px;}
+.linkcont{line-height:22px; font-size:12px;color:#fff;width: 1000px;margin: 0 auto;text-align: left; padding:5px;}
+.link a{ color:#fff; margin-left:6px; font-size:12px;}
+.link a:hover{ text-decoration:underline;}
+
+.testtitle{height: 30px;line-height: 30px;margin-top:20px;}
+.testtitle a{font-size: 18px;color: #222;float: left;}
+.testtime{float:right; font-size: 14px;color: #854f00;}
+.testbuton{margin-top: 10px;height: 30px;}
+.testbuton a{display: block;float: left;margin-right: 10px;width: 167px;text-align: center;height: 30px;line-height: 30px;font-size: 14px;border: 1px solid #f1dfc7;padding: 2px;}
+.testbuton a span{display: block;background:#ac824c;color: #f1dfc7;transition:All 0.4s ease-in-out;    -webkit-transition:All 0.4s ease-in-out;    -moz-transition:All 0.4s ease-in-out;    -o-transition:All 0.4s ease-in-out;}
+.testbuton a span:hover{background:#8d4c14;color: #f1dfc7;font-size: 15px;letter-spacing:5px;}
+
+.testcont{margin-top: 20px;clear: both;}
+.testcont p{font-size: 14px;color: #333;line-height:35px;}
+.testcont p input{margin: 0 5px;border: 1px solid #d39c6c;width: 150px;height: 25px;line-height: 25px;}
+
+
+
+
+
+
+
+

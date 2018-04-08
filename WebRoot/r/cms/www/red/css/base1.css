@@ -1,0 +1,96 @@
+/*----------------------------------------------RESET CSS----------------------------------------------*/
+/* 清除内外边距 */
+*{ font-family:"微软雅黑"; font-size:12px;}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, legend, button, input, textarea,form, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+
+i{ font-style:normal}
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+
+/* 重置列表元素 */
+ol, ul, li { list-style: none; }
+
+/* 重置文本格式元素 */
+
+abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+q:before, q:after { content: ''; }
+
+/* 重置表单元素 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+    outline: none;
+}
+
+/* 重置表格元素 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 重置 hr */
+hr {
+    border: none;
+    height: 1px;
+}
+
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html { overflow-y: scroll; }
+
+label,
+select,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] { cursor: pointer;  }
+
+img{border: 0;}
+a{text-decoration: none;color:#854f00;}
+a:hover{text-decoration: none;}
+
+
+body{background:#e6ddc9;}
+.clear{ clear:both;}
+
+
+.header{ width:100%; height:120px;}
+.header .header01{ width:1000px; height:120px; margin:0 auto; background:url(../img/logobg.png) no-repeat center; }
+.header .header01 .logo{ margin:32px 0px 0px 50px; float:left;}
+.header .header01 p{ float:right; margin:10px; letter-spacing:2px;color:#854f00;}
+
+
+.nav{ width:100%; height:40px;}
+.nav .nav01{ width:980px; height:40px; margin:0 auto; background:url(../img/navbg.png) repeat-x; padding-left:20px;}
+.nav .nav01 ul li{ float:left; padding:0px 15px; line-height:40px;}
+.nav .nav01 ul li a{ color:#d4c5a6;}
+.nav .nav01 ul li a:hover{ color:#FFF;}
+
+.banner{ width:100%; height:300px;}
+.banner .banner01{ width:1000px; height:300px; margin:0 auto;}
+.bannertwo{ width:100%; height:220px;}
+.bannertwo .banner02{ width:1000px; height:220px; margin:0 auto;}
+
+.footer{ width:100%; height:71px;}
+.footer .footer01{clear:both; width:1000px; height:56px; background:#735e41; margin:0 auto; padding-top:15px;}
+.footer .footer01 p{ width:1000px; text-align:center; line-height:25px; color:#f1f0ee;} 
+.tukuzlm{ text-align:center; margin:10px 0px;}
+.pagesite{margin-top: 20px;}

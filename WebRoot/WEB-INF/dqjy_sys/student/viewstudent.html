@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title></title>
+<#include "/dqjy_sys/head.html"/>
+<script type="text/javascript">
+$(function() {
+	$("#jvForm").validate();
+});
+</script>
+</head>
+<body>
+<div class="box-positon">
+	<div class="rpos"><@s.m "global.position"/>: <@s.m "cmsjcStudent.function"/> - 查看详细</div>
+	<form class="ropt">
+		<input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';" class="return-button"/>
+	</form>
+	<div class="clear"></div>
+</div>
+<div class="body-box">
+<@p.form id="jvForm" action="v_list.do" labelWidth="12">
+<@p.td colspan="1"  width="50"  label="姓名" >${jcStudent.bkname!}</@p.td>
+<@p.td colspan="1"  width="50" label="性别" >${jcStudent.sex!}</@p.td><@p.tr/>
+<@p.td colspan="1" width="50" label="出生年月" ><#if jcStudent.birthday??>${jcStudent.birthday!?string("yyyy-MM-dd")}</#if></@p.td>
+<@p.td colspan="1"  width="50" label="身份证号" >${jcStudent.idcard!}</@p.td><@p.tr/>
+<@p.td colspan="1"  width="50"  label="民族" >${jcStudent.nation!}</@p.td>
+<@p.td colspan="1"  width="50" label="手机号码" >${jcStudent.phonenumber!}</@p.td><@p.tr/>
+<@p.td colspan="1"  width="50"  label="报考专业" >${jcStudent.bkzy!}</@p.td>
+<@p.td colspan="1"  width="50" label="报名层次" >${jcStudent.bmcc!}</@p.td><@p.tr/>
+<@p.td colspan="1"  width="50"  label="政治面貌" >${jcStudent.politicalstatus!}</@p.td>
+<@p.td colspan="1"  width="50" label="现有学历" >${jcStudent.education!}</@p.td><@p.tr/>
+
+<@p.td colspan="1"  width="50"  label="毕业学校" >${jcStudent.schooltag!}</@p.td>
+<@p.td colspan="1"  width="50" label="毕业证书编号" >${jcStudent.certificatenumber!}</@p.td><@p.tr/>
+
+<@p.td colspan="1"  width="50"  label="家庭电话" >${jcStudent.homephone!}</@p.td>
+<@p.td colspan="1"  width="50" label="联系地址" >${jcStudent.address!}</@p.td><@p.tr/>
+
+<@p.td colspan="2"  width="50"  label="邮政编码" >${jcStudent.zipcode!}</@p.td><@p.tr/>
+<@p.td colspan="2"  width="50" label="备注" >${jcStudent.remark!}</@p.td><@p.tr/>
+
+
+
+</@p.form>
+</div>
+</body>
+</html>
